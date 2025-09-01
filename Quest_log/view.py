@@ -1,7 +1,6 @@
 from tkinter import ttk
 from controller import register, login, logout_function, choose_class_function, choose_class
 
-
 def login_window(root):
     root.title("Quest Log")
     root.configure(background="black")
