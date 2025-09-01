@@ -1,5 +1,5 @@
 from tkinter import ttk
-from controller import register, login, logout_function, choose_class_function
+from controller import register, login, logout_function, choose_class_function, choose_class
 
 
 def login_window(root):
@@ -85,9 +85,15 @@ def choose_class_window(main_menu_frame, parent):
 
     ttk.Label(choose_class_frame, text="Welcome Back, Adventurer", style="Title.TLabel").pack(pady=20)
 
-    button_frame = ttk.Frame(main_menu_frame, style="My.TFrame")
+    button_frame = ttk.Frame(choose_class_frame, style="My.TFrame")
     button_frame.pack(padx=20, pady=20)
-    warrior_button = ttk.Button(button_frame, text="Warrior", style="My.TButton")
+    warrior_button = ttk.Button(button_frame, text="Warrior", command=lambda:choose_class("Warrior", main_menu_frame, choose_class_frame), style="My.TButton")
+    warrior_button.grid(row=0, column=0, padx=10, pady=10)
+    mage_button = ttk.Button(button_frame, text="Mage", command=lambda:choose_class("Mage", main_menu_frame, choose_class_frame), style="My.TButton")
+    mage_button.grid(row=1, column=0, padx=10, pady=10)
+    thief_button = ttk.Button(button_frame, text="Thief", command=lambda:choose_class("Thief", main_menu_frame, choose_class_frame), style="My.TButton")
+    thief_button.grid(row=2, column=0, padx=10, pady=10)
+
 
 
 

@@ -1,6 +1,8 @@
 from tkinter import messagebox
+import tkinter as tk
 from model import load_adventurers, save_adventurers
 import re
+import session
 
 def login(username_entry, password_entry, root, menu_frame):
     username = username_entry.get().strip()
@@ -16,7 +18,8 @@ def login(username_entry, password_entry, root, menu_frame):
         messagebox.showerror("Invalid Username", "Username is not registered")
         return
 
-    if adventurers["adventurers"][username] == password:
+    if adventurers["adventurers"][username]["password"] == password:
+        session.current_user = username
         messagebox.showinfo("Success", f"Gate opened. Welcome back, {username}!")
         show_main_menu(menu_frame, root)
     else:
@@ -38,7 +41,11 @@ def register(username_entry, password_entry, root, menu_frame):
         messagebox.showerror("Denied", err or "Please enter a valid username and password.")
         return
 
-    adventurers["adventurers"][username] = password
+    adventurers["adventurers"][username] = {
+        "password": password,
+        "class": None
+    }
+    session.current_user = username
     save_adventurers(adventurers)
 
     show_main_menu(menu_frame, root)
@@ -60,7 +67,7 @@ def show_main_menu(menu_frame, root):
     from view import main_menu_window
 
     menu_frame.pack_forget()
-    main_menu_frame = main_menu_window(root, menu_frame)
+    main_menu_window(root, menu_frame)
 
 def logout_function(main_menu_frame, menu_frame):
     main_menu_frame.pack_forget()
@@ -70,5 +77,19 @@ def choose_class_function(main_menu_frame, parent):
     from view import choose_class_window
 
     main_menu_frame.pack_forget()
-    choose_class_frame = choose_class_window(main_menu_frame, parent)
+    choose_class_window(main_menu_frame, parent)
+
+def choose_class(chosen_class, main_menu_frame, choose_class_frame):
+    username = session.current_user
+
+    adventurers = load_adventurers()
+    if username in adventurers["adventurers"]:
+        adventurers["adventurers"][username]["class"] = chosen_class
+        save_adventurers(adventurers)
+
+    choose_class_frame.pack_forget()
+    main_menu_frame.pack(fill="both", expand=True)
+
+
+
 
