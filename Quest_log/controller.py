@@ -41,9 +41,19 @@ def register(username_entry, password_entry, root, menu_frame):
         messagebox.showerror("Denied", err or "Please enter a valid username and password.")
         return
 
+    default_stats = {
+        "health": 100,
+        "stamina": 100,
+        "mana": 100,
+        "strength": 1,
+        "dexterity": 1,
+        "intelligence": 1,
+    }
+
     adventurers["adventurers"][username] = {
         "password": password,
-        "class": None
+        "class": None,
+        "stats": default_stats
     }
     session.current_user = username
     save_adventurers(adventurers)
@@ -69,9 +79,11 @@ def show_main_menu(menu_frame, root):
     menu_frame.pack_forget()
     main_menu_window(root, menu_frame)
 
-def logout_function(main_menu_frame, menu_frame):
+def logout_function(main_menu_frame, parent):
+    from view import login_window
+
     main_menu_frame.pack_forget()
-    menu_frame.pack(fill="both", expand=True)
+    login_window(parent)
 
 def choose_class_function(main_menu_frame, parent):
     from view import choose_class_window
@@ -89,6 +101,12 @@ def choose_class(chosen_class, main_menu_frame, choose_class_frame):
 
     choose_class_frame.pack_forget()
     main_menu_frame.pack(fill="both", expand=True)
+
+def back_to_menu(status_frame, parent):
+    from view import main_menu_window
+
+    status_frame.pack_forget()
+    main_menu_window(parent, status_frame)
 
 
 

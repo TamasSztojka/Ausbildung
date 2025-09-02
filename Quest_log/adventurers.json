@@ -2,7 +2,15 @@
   "adventurers": {
     "Tomi": {
       "password": "123456",
-      "class": "Warrior"
+      "class": "Thief",
+      "stats": {
+        "health": 100,
+        "stamina": 100,
+        "mana": 100,
+        "strength": 1,
+        "dexterity": 1,
+        "intelligence": 1
+      }
     }
   }
 }
