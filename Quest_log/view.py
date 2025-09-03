@@ -1,5 +1,6 @@
 from tkinter import ttk
-
+import tkinter as tk
+import tkinter.font as tkfont
 import session
 from controller import register, login, logout_function, choose_class_function, choose_class, back_to_menu
 from model import load_adventurers, save_adventurers
@@ -123,6 +124,19 @@ def show_status_window(main_menu_frame, parent):
 
     ttk.Button(status_frame, text="Back", command=lambda: back_to_menu(status_frame, parent), style="My.TButton").pack(
         pady=20)
+
+def scale_fonts(root, base_width=1024, min_size=9, max_size=18):
+    sw = root.winfo_screenwidth()
+    scale = max(0.75, min(1.25, sw / base_width))
+    try:
+        root.tk.call("tk", "scaling", scale)
+    except tk.TclError:
+        pass
+
+    for name in ("TkDefaultFont", "TkTextFont", "TkFixedFont",
+                 "TkMenuFont", "TkHeadingFont", "TkIconFont", "TkTooltipFont"):
+        f = tkfont.nametofont(name)
+        f.configure(size=int(max(min_size, min(max_size, round(f.cget("size") * scale)))))
 
 
 
