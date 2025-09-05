@@ -4,6 +4,7 @@ import tkinter.font as tkfont
 import session
 from controller import register, login, logout_function, choose_class_function, choose_class, back_to_menu
 from model import load_adventurers, save_adventurers
+import json
 
 
 def login_window(root):
@@ -21,14 +22,18 @@ def login_window(root):
 
     return menu_frame
 
-def login_window_body(menu_frame, root):
+def style_template():
     style = ttk.Style()
     style.theme_use("clam")
-    style.configure("Title.TLabel", font=("MedievalSharp", 25), foreground="gold")
-    style.configure("Subtitle.TLabel", font=("MedievalSharp", 20), foreground="gold")
+    style.configure("Title.TLabel", font=("MedievalSharp", 25), foreground="gold", background="black")
+    style.configure("Subtitle.TLabel", font=("MedievalSharp", 20), foreground="gold", background="black")
+    style.configure("Stat.TLabel", font=("MedievalSharp", 20), foreground="white", background="black")
     style.configure("My.TEntry", foreground="black", insertcolor="black", font=("MedievalSharp", 20))
     style.configure("Frame.TButton", foreground="Black", background="black", fieldbackground="black")
     style.configure("My.TButton", foreground="black", font=("MedievalSharp", 20), background="#FFA500")
+
+def login_window_body(menu_frame, root):
+    style_template()
 
     ttk.Label(menu_frame, text="Welcome Adventurer", background="black", style="Title.TLabel").pack(pady=20)
     ttk.Label(menu_frame, text="Please enter thy credentials to open the gate", background="black", style="Title.TLabel").pack(pady=20)
@@ -49,12 +54,7 @@ def login_window_body(menu_frame, root):
     start_button.grid(row=0, column=1, padx=10, pady=10)
 
 def main_menu_window(parent, menu_frame):
-    style = ttk.Style()
-    style.theme_use("clam")
-    style.configure("My.TFrame", background="black")
-    style.configure("Title.TLabel", font=("MedievalSharp", 25), foreground="gold", background="black")
-    style.configure("Frame.TButton", foreground="Black", background="black", fieldbackground="black")
-    style.configure("My.TButton", foreground="black", font=("MedievalSharp", 20), background="#FFA500")
+    style_template()
 
     main_menu_frame = ttk.Frame(parent, style="My.TFrame")
     main_menu_frame.pack(padx=20, pady=20)
@@ -67,7 +67,7 @@ def main_menu_window(parent, menu_frame):
     choose_class_button.grid(row=0, column=0, padx=10, pady=10)
     status_button = ttk.Button(button_frame, text="Status", command=lambda: show_status_window(main_menu_frame, parent), style="My.TButton")
     status_button.grid(row=1, column=0, padx=10, pady=10)
-    quests_button = ttk.Button(button_frame, text="Quests", style="My.TButton")
+    quests_button = ttk.Button(button_frame, text="Quests", command=lambda: show_quest_window(main_menu_frame, parent), style="My.TButton")
     quests_button.grid(row=2, column=0, padx=10, pady=10)
     logout_button = ttk.Button(button_frame, text="Logout", command=lambda:logout_function(main_menu_frame, parent), style="My.TButton")
     logout_button.grid(row=3, column=0, padx=10, pady=10)
@@ -77,17 +77,12 @@ def main_menu_window(parent, menu_frame):
     return main_menu_frame
 
 def choose_class_window(main_menu_frame, parent):
-    style = ttk.Style()
-    style.theme_use("clam")
-    style.configure("My.TFrame", background="black")
-    style.configure("Title.TLabel", font=("MedievalSharp", 25), foreground="gold", background="black")
-    style.configure("Frame.TButton", foreground="Black", background="black", fieldbackground="black")
-    style.configure("My.TButton", foreground="black", font=("MedievalSharp", 20), background="#FFA500")
+    style_template()
 
     choose_class_frame = ttk.Frame(parent, style="My.TFrame")
     choose_class_frame.pack(padx=20, pady=20)
 
-    ttk.Label(choose_class_frame, text="Welcome Back, Adventurer", style="Title.TLabel").pack(pady=20)
+    ttk.Label(choose_class_frame, text="Choose your class", style="Title.TLabel").pack(pady=20)
 
     button_frame = ttk.Frame(choose_class_frame, style="My.TFrame")
     button_frame.pack(padx=20, pady=20)
@@ -99,12 +94,7 @@ def choose_class_window(main_menu_frame, parent):
     thief_button.grid(row=2, column=0, padx=10, pady=10)
 
 def show_status_window(main_menu_frame, parent):
-    style = ttk.Style()
-    style.theme_use("clam")
-    style.configure("My.TFrame", background="black")
-    style.configure("Title.TLabel", font=("MedievalSharp", 25), foreground="gold", background="black")
-    style.configure("Stat.TLabel", font=("MedievalSharp", 16), foreground="white", background="black")
-    style.configure("My.TButton", foreground="black", font=("MedievalSharp", 16), background="#FFA500")
+    style_template()
 
     main_menu_frame.pack_forget()
     username = session.current_user
@@ -125,6 +115,70 @@ def show_status_window(main_menu_frame, parent):
     ttk.Button(status_frame, text="Back", command=lambda: back_to_menu(status_frame, parent), style="My.TButton").pack(
         pady=20)
 
+def show_quest_window(main_menu_frame, parent):
+    import session
+    from model import load_adventurers
+
+    style_template()
+
+    with open("quests.json", "r", encoding="utf-8") as quest_file:
+        quests = json.load(quest_file)
+
+    adventurers = load_adventurers()
+    username = session.current_user
+    user_class = adventurers["adventurers"].get(username, {}).get("class")
+
+    class_quests = [q for q in quests if q["class"] == user_class]
+
+    main_menu_frame.pack_forget()
+    quest_list_frame = ttk.Frame(parent, style="My.TFrame")
+    quest_list_frame.pack(fill="both", expand=True, padx=20, pady=20)
+
+    ttk.Label(quest_list_frame, text=f"{user_class} Quests", style="Title.TLabel").pack(pady=20)
+
+    if not class_quests:
+        ttk.Label(quest_list_frame, text="No quests available for your class.", style="Quest.TLabel").pack()
+    else:
+        for quest in class_quests:
+            frame = ttk.Frame(quest_list_frame, style="My.TFrame")
+            frame.pack(fill="x", pady=10)
+
+            ttk.Label(frame, text=quest["name"], style="Title.TLabel").pack(anchor="w", padx=10)
+            ttk.Label(frame, text=quest["description"], style="Stat.TLabel").pack(anchor="w", padx=20, pady=5)
+
+            ttk.Button(
+                frame,
+                text="Accept Quest",
+                style="My.TButton",
+                command=lambda selected_quest=quest: show_quest_detail_window(quest_list_frame, parent, selected_quest)
+            ).pack(anchor="e", padx=20, pady=5)
+
+    ttk.Button(quest_list_frame, text="Back", style="My.TButton", command=lambda: back_to_menu(quest_list_frame, parent)
+    ).pack(pady=20)
+
+def show_quest_detail_window(quest_list_frame, parent, quest):
+    style_template()
+
+    quest_list_frame.pack_forget()
+    detail_frame = ttk.Frame(parent, style="My.TFrame")
+    detail_frame.pack(fill="both", expand=True, padx=20, pady=20)
+
+    ttk.Label(detail_frame, text=quest["name"], style="Title.TLabel").pack(pady=10)
+    ttk.Label(detail_frame, text=quest["description"], style="Subtitle.TLabel", wraplength=800).pack(pady=5)
+    ttk.Label(detail_frame, text="Goal:", style="Subtitle.TLabel").pack(pady=(15, 0))
+    ttk.Label(detail_frame, text=quest["goal"], style="Subtitle.TLabel", wraplength=800).pack(pady=5)
+
+    sensors = quest["sensor"]
+    sensor_display = ", ".join(sensors) if isinstance(sensors, list) else (sensors or "None")
+    ttk.Label(detail_frame, text=f"Sensor Required: {sensor_display}", style="Subtitle.TLabel").pack(pady=5)
+
+    reward = quest["reward"]
+    reward_str = f"EXP: {reward['exp']} | Stat: " + ", ".join(f"{k} +{v}" for k, v in reward["stat"].items())
+    ttk.Label(detail_frame, text=f"Reward: {reward_str}", style="Subtitle.TLabel").pack(pady=10)
+
+    ttk.Button(detail_frame, text="Back to Quest List", style="My.TButton", command=lambda: show_quest_window(detail_frame, parent)).pack(pady=20)
+
+
 def scale_fonts(root, base_width=1024, min_size=9, max_size=18):
     sw = root.winfo_screenwidth()
     scale = max(0.75, min(1.25, sw / base_width))
@@ -135,8 +189,8 @@ def scale_fonts(root, base_width=1024, min_size=9, max_size=18):
 
     for name in ("TkDefaultFont", "TkTextFont", "TkFixedFont",
                  "TkMenuFont", "TkHeadingFont", "TkIconFont", "TkTooltipFont"):
-        f = tkfont.nametofont(name)
-        f.configure(size=int(max(min_size, min(max_size, round(f.cget("size") * scale)))))
+        font = tkfont.nametofont(name)
+        font.configure(size=int(max(min_size, min(max_size, round(font.cget("size") * scale)))))
 
 
 
