@@ -1,4 +1,5 @@
 from tkinter import ttk
+from tkinter import messagebox
 import tkinter as tk
 import tkinter.font as tkfont
 import session
@@ -173,10 +174,25 @@ def show_quest_detail_window(quest_list_frame, parent, quest):
     ttk.Label(detail_frame, text=f"Sensor Required: {sensor_display}", style="Subtitle.TLabel").pack(pady=5)
 
     reward = quest["reward"]
-    reward_str = f"EXP: {reward['exp']} | Stat: " + ", ".join(f"{k} +{v}" for k, v in reward["stat"].items())
-    ttk.Label(detail_frame, text=f"Reward: {reward_str}", style="Subtitle.TLabel").pack(pady=10)
+    reward_string = f"EXP: {reward['exp']} | Stat: " + ", ".join(f"{k} +{v}" for k, v in reward["stat"].items())
+    ttk.Label(detail_frame, text=f"Reward: {reward_string}", style="Subtitle.TLabel").pack(pady=10)
 
+    ttk.Button(detail_frame, text="Start Quest", style="My.TButton", command=lambda: start_quest(detail_frame, quest, parent)).pack(pady=20)
     ttk.Button(detail_frame, text="Back to Quest List", style="My.TButton", command=lambda: show_quest_window(detail_frame, parent)).pack(pady=20)
+
+def start_quest(detail_frame, quest, parent):
+    from quest_handlers import QUEST_HANDLERS
+
+    detail_frame.pack_forget()
+    handler = QUEST_HANDLERS.get(quest["id"])
+
+    if handler:
+        handler(quest, detail_frame, parent)
+    else:
+        # Default/future sensor-based placeholder
+        messagebox.showinfo("Coming Soon", "This quest requires a special sensor and is not yet implemented.")
+        from view import main_menu_window
+        main_menu_window(parent, detail_frame)
 
 
 def scale_fonts(root, base_width=1024, min_size=9, max_size=18):

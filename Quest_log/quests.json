@@ -77,7 +77,7 @@
     "name": "Riddle of the Mind",
     "class": "Mage",
     "description": "Answer a magical riddle using your mind and logic.",
-    "goal": "Solve the riddle: 'I speak without a mouth and hear without ears...what am I?'",
+    "goal": "Solve the riddle:",
     "sensor": null,
     "reward": {
       "exp": 60,
