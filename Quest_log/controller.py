@@ -1,5 +1,4 @@
 from tkinter import messagebox
-import tkinter as tk
 from model import load_adventurers, save_adventurers
 import re
 import session
@@ -65,13 +64,13 @@ def register(username_entry, password_entry, root, menu_frame):
 
 def validate_registration(username, password, adventurers):
     if username in adventurers["adventurers"]:
-        return False
+        return False, "Username already exists"
 
     if not re.match(r"^[a-zA-Z0-9]+$", username):
-        return False
+        return False, "Username must be alphanumeric"
 
     if not (3 <= len(password) <= 120):
-        return False
+        return False, "Password must be between 3 and 120 characters"
 
     return True, None
 
