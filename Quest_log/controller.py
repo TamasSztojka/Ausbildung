@@ -41,6 +41,8 @@ def register(username_entry, password_entry, root, menu_frame):
         return
 
     default_stats = {
+        "level": 1,
+        "experience": 0,
         "health": 100,
         "stamina": 100,
         "mana": 100,
@@ -52,8 +54,6 @@ def register(username_entry, password_entry, root, menu_frame):
     adventurers["adventurers"][username] = {
         "password": password,
         "class": None,
-        "level": 1,
-        "experience": 0,
         "stats": default_stats
     }
     session.current_user = username

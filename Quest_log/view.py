@@ -110,8 +110,12 @@ def show_status_window(main_menu_frame, parent):
 
     ttk.Label(status_frame, text=f"{username}'s Status", style="Title.TLabel").pack(pady=10)
     ttk.Label(status_frame, text=f"Class: {user_class}", style="Stat.TLabel").pack(pady=5)
-    for stat, value in stats.items():
-        ttk.Label(status_frame, text=f"{stat.capitalize()}: {value}", style="Stat.TLabel").pack(pady=2)
+    ttk.Label(status_frame, text=f"Level: {stats.get('level', 1)}", style="Stat.TLabel").pack(pady=5)
+    ttk.Label(status_frame, text=f"Experience: {stats.get('experience', 0)} / 100", style="Stat.TLabel").pack(pady=5)
+
+    for stat in ["health", "stamina", "mana", "strength", "dexterity", "intelligence"]:
+        if stat in stats:
+            ttk.Label(status_frame, text=f"{stat.capitalize()}: {stats[stat]}", style="Stat.TLabel").pack(pady=2)
 
     ttk.Button(status_frame, text="Back", command=lambda: back_to_menu(status_frame, parent), style="My.TButton").pack(
         pady=20)
@@ -129,7 +133,7 @@ def show_quest_window(main_menu_frame, parent):
     username = session.current_user
     user_class = adventurers["adventurers"].get(username, {}).get("class")
 
-    class_quests = [q for q in quests if q["class"] == user_class]
+    class_quests = [quest for quest in quests if quest["class"] == user_class]
 
     main_menu_frame.pack_forget()
     quest_list_frame = ttk.Frame(parent, style="My.TFrame")
@@ -147,10 +151,7 @@ def show_quest_window(main_menu_frame, parent):
             ttk.Label(frame, text=quest["name"], style="Title.TLabel").pack(anchor="w", padx=10)
             ttk.Label(frame, text=quest["description"], style="Stat.TLabel").pack(anchor="w", padx=20, pady=5)
 
-            ttk.Button(
-                frame,
-                text="Accept Quest",
-                style="My.TButton",
+            ttk.Button(frame, text="Accept Quest", style="My.TButton",
                 command=lambda selected_quest=quest: show_quest_detail_window(quest_list_frame, parent, selected_quest)
             ).pack(anchor="e", padx=20, pady=5)
 

@@ -37,3 +37,9 @@ def read_distance_cm():
 
 def cleanup():
     GPIO.cleanup()
+
+TILT_PIN = 17
+GPIO.setup(TILT_PIN, GPIO.IN)
+
+def is_tilted():
+    return GPIO.input(TILT_PIN) == GPIO.HIGH

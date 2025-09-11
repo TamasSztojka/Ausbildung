@@ -29,13 +29,13 @@
   },
   {
     "id": 3,
-    "name": "Steady Hands",
+    "name": "The Lift",
     "class": "Thief",
-    "description": "Balance an object on your hand without shaking.",
-    "goal": "Hold a tilt sensor steady for 10 seconds without triggering it.",
+    "description": "Carefully lift and hold a valuable item without setting off an alarm.",
+    "goal": "Lift the object and hold it steady for 5 seconds without triggering the tilt sensor.",
     "sensor": "tilt",
     "reward": {
-      "exp": 50,
+      "exp": 75,
       "stat": {
         "Dexterity": 1
       }
@@ -43,14 +43,11 @@
   },
   {
     "id": 4,
-    "name": "The Lift",
+    "name": "Cutpurse",
     "class": "Thief",
-    "description": "Carefully lift and hold a valuable item without setting off an alarm.",
-    "goal": "Lift an object above 10cm (ultrasonic) and hold it steady (tilt) for 5 seconds.",
-    "sensor": [
-      "ultrasonic",
-      "tilt"
-    ],
+    "description": "Pickpocket a noble by sneaking close — but stop just at the right distance or risk discovery.",
+    "goal": "Swipe your hand 20–30 cm from the ultrasonic sensor.",
+    "sensor": "ultrasonic",
     "reward": {
       "exp": 75,
       "stat": {

@@ -3,7 +3,7 @@ from view import style_template
 import tkinter as tk
 import time
 from tkinter import ttk, simpledialog, messagebox
-from sensors import read_distance_cm
+from sensors import read_distance_cm, is_tilted
 import session
 from model import load_adventurers, save_adventurers, load_random_riddle, load_random_spell
 
@@ -28,7 +28,7 @@ def handle_memory_spell(quest, parent_frame, parent):
         main_menu_window(parent, frame)
 
     messagebox.showinfo("Memoize This Spell", f"Spell: {spell}")
-    parent.after(10000, lambda: show_input_field(spell, parent_frame, parent, quest, check_answer))
+    parent.after(5000, lambda: show_input_field(spell, parent_frame, parent, quest, check_answer))
 
 def show_input_field(spell, parent_frame, parent, quest, check_answer):
     style_template()
@@ -66,11 +66,23 @@ def apply_reward(quest):
     username = session.current_user
     adventures = load_adventurers()
     user = adventures["adventurers"].get(username)
-    user["experience"] += quest["reward"]["exp"]
+
+    stats = user["stats"]
+
+    stats["experience"] = stats.get("experience", 0) + quest["reward"]["exp"]
+
+    while stats["experience"] >= 100:
+        stats["experience"] -= 100
+        stats["level"] = stats.get("level", 1) + 1
+        messagebox.showinfo("Level Up", f"{username} has reached level {stats['level']}!")
+
+        stats["health"] += 10
+        stats["stamina"] += 10
+        stats["mana"] += 10
 
     for stat, value in quest["reward"]["stat"].items():
         stat_key = stat.lower()
-        user["stats"][stat_key] = user["stats"].get(stat_key, 0) + value
+        stats[stat_key] = stats.get(stat_key, 0) + value
 
     save_adventurers(adventures)
 
@@ -153,10 +165,60 @@ def handle_plank_endurance(quest, parent_frame, parent):
     ttk.Button(plank_frame, text="Start", style="MyTButton", command=lambda: threading.Thread(target=plank_loop, daemon=True).start()).pack(pady=10)
     ttk.Button(plank_frame, text="Cancel", style="MyTButton", command=lambda: cancel_and_return(plank_frame, parent)).pack(pady=10)
 
+def handle_lift_quest(quest, parent_frame, parent):
+    style_template()
+    parent_frame.pack_forget()
+
+    lift_frame=ttk.Frame(parent, style="My.TFrame")
+    lift_frame.pack(padx=20, pady=20)
+
+    ttk.Label(lift_frame, text="Hold the object steady for 5 seconds...", style="Title.TLabel").pack(pady=10)
+
+    def check_stability():
+        start = time.time()
+        while time.time() - start < 5:
+            if is_tilted():
+                messagebox.showerror("Failed", "You moved! Quest Failed.")
+                cancel_and_return(lift_frame, parent)
+                return
+            time.sleep(0.1)
+
+        messagebox.showinfo("Success!", "Perfect balance! Dexterity Increased")
+        apply_reward(quest)
+        cancel_and_return(lift_frame, parent)
+
+    ttk.Button(lift_frame, text="Start Challenge", style="My.TButton", command=lambda: lift_frame.after(100, check_stability)).pack(pady=10)
+    ttk.Button(lift_frame, text="Cancel", style="My.TButton", command=lambda: cancel_and_return(lift_frame, parent)).pack(pady=10)
+
+def handle_cutpurse_quest(quest, parent_frame, parent):
+    style_template()
+    parent_frame.pack_forget()
+
+    cutpurse_frame=ttk.Frame(parent, style="My.TFrame")
+    cutpurse_frame.pack(padx=20, pady=20)
+
+    ttk.Label(cutpurse_frame, text="Approach the target carefully...", style="Title.TLabel").pack(pady=10)
+    ttk.Label(cutpurse_frame, text="Stop at 20–30 cm to succeed!", style="Subtitle.TLabel").pack(pady=5)
+
+    def check_distance():
+        distance = read_distance_cm()
+        if 20 <= distance <= 30:
+            messagebox.showinfo("Success", f"Success! You stopped at {distance} cm.")
+            apply_reward(quest)
+        else:
+            messagebox.showerror("Failed", f"You stopped at {distance} cm - too far or too close!")
+        cancel_and_return(cutpurse_frame, parent)
+
+    ttk.Button(cutpurse_frame, text="Start", style="My.TButton", command=check_distance).pack(pady=10)
+    ttk.Button(cutpurse_frame, text="Cancel", style="My.TButton", command=lambda: cancel_and_return(cutpurse_frame, parent)).pack(pady=10)
+
+
 
 QUEST_HANDLERS = {
     1: handle_pushup_training,
     2: handle_plank_endurance,
+    3: handle_lift_quest,
+    4: handle_cutpurse_quest,
     5: handle_memory_spell,
     6: handle_riddle_quest,
 }
