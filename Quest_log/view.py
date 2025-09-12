@@ -133,11 +133,20 @@ def show_quest_window(main_menu_frame, parent):
     username = session.current_user
     user_class = adventurers["adventurers"].get(username, {}).get("class")
 
-    class_quests = [quest for quest in quests if quest["class"] == user_class]
+    from quest_cooldown import has_completed_today
+
+    class_quests = [
+        quest for quest in quests
+        if quest["class"] == user_class and not has_completed_today(username, quest["id"])
+    ]
 
     main_menu_frame.pack_forget()
     quest_list_frame = ttk.Frame(parent, style="My.TFrame")
     quest_list_frame.pack(fill="both", expand=True, padx=20, pady=20)
+
+    if not class_quests:
+        ttk.Label(quest_list_frame, text="You've completed all available quests today. Come back tomorrow!",
+                  style="Quest.TLabel").pack()
 
     ttk.Label(quest_list_frame, text=f"{user_class} Quests", style="Title.TLabel").pack(pady=20)
 

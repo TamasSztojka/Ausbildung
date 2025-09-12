@@ -6,6 +6,7 @@ from tkinter import ttk, simpledialog, messagebox
 from sensors import read_distance_cm, is_tilted
 import session
 from model import load_adventurers, save_adventurers, load_random_riddle, load_random_spell
+from quest_cooldown import mark_completed
 
 def cancel_and_return(frame, parent):
     frame.pack_forget()
@@ -84,6 +85,7 @@ def apply_reward(quest):
         stat_key = stat.lower()
         stats[stat_key] = stats.get(stat_key, 0) + value
 
+    mark_completed(username, quest["id"])
     save_adventurers(adventures)
 
 def handle_pushup_training(quest, parent_frame, parent):

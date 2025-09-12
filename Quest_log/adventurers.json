@@ -2,7 +2,7 @@
   "adventurers": {
     "Tomi": {
       "password": "123456",
-      "class": "Warrior",
+      "class": "Thief",
       "level": 1,
       "experience": 110,
       "stats": {
