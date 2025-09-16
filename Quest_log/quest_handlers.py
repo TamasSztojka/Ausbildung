@@ -1,3 +1,4 @@
+from typing import Optional
 import threading
 from view import style_template
 import tkinter as tk
@@ -126,46 +127,53 @@ def handle_pushup_training(quest, parent_frame, parent):
     ttk.Button(pushup_frame, text="Cancel", style="My.TButton", command=lambda: cancel_and_return(pushup_frame, parent)).pack(pady=10)
 
 def handle_plank_endurance(quest, parent_frame, parent):
-    from view import style_template
     style_template()
-
     parent_frame.pack_forget()
 
     plank_frame = ttk.Frame(parent, style="My.TFrame")
     plank_frame.pack(fill="both", expand=True)
 
     ttk.Label(plank_frame, text="Plank Endurance", style="Title.TLabel").pack(pady=10)
-    ttk.Label(plank_frame, text="Hold your body within 10-20cm of the sensor for 30 seconds.", style="Subtitle.TLabel").pack(pady=10)
+    ttk.Label(
+        plank_frame,
+        text="Hold your body within 10-20cm of the sensor for 30 seconds.",
+        style="Subtitle.TLabel",
+    ).pack(pady=10)
 
-    timer_label  = ttk.Label(plank_frame, text="Time: 0s", style="Stat.TLabel")
+    timer_label = ttk.Label(plank_frame, text="Time: 0s", style="Stat.TLabel")
     timer_label.pack(pady=10)
 
-    def plank_loop():
-        start_time = None
-        total_held = 0
+    total_held: float = 0.0
+    last_tick: Optional[float] = None  # can be None or float
 
-        while total_held < 30:
-            distance = read_distance_cm()
+    def update_timer():
+        nonlocal total_held, last_tick
 
-            if 10 <= distance <= 20:
-                if start_time is None:
-                    start_time = time.time()
-                else:
-                    total_held = int(time.time() - start_time)
-                    timer_label.config(text=f"Time: {total_held}s")
+        distance = read_distance_cm()
 
+        if 10 <= distance <= 20:
+            if last_tick is None:
+                last_tick = time.time()
             else:
-                start_time = None
-                timer_label.config(text="Resetting...")
+                elapsed = time.time() - last_tick
+                total_held += elapsed
+                last_tick = time.time()
+        else:
+            last_tick = None  # reset streak but keep accumulated time
 
-            time.sleep(0.3)
+        timer_label.config(text=f"Time: {int(total_held)}s")
 
-        messagebox.showinfo("Quest Complete", "You held the plank for 30 seconds!")
-        apply_reward(quest)
-        cancel_and_return(plank_frame, parent)
+        if total_held >= 30:
+            messagebox.showinfo("Quest Complete", "You held the plank for 30 seconds!")
+            apply_reward(quest)
+            cancel_and_return(plank_frame, parent)
+        else:
+            parent.after(300, update_timer)  # check again after 300ms
 
-    ttk.Button(plank_frame, text="Start", style="MyTButton", command=lambda: threading.Thread(target=plank_loop, daemon=True).start()).pack(pady=10)
-    ttk.Button(plank_frame, text="Cancel", style="MyTButton", command=lambda: cancel_and_return(plank_frame, parent)).pack(pady=10)
+    ttk.Button(
+        plank_frame, text="Start", style="My.TButton", command=lambda: update_timer()
+    ).pack(pady=10)
+    ttk.Button(plank_frame, text="Cancel", style="My.TButton", command=lambda: cancel_and_return(plank_frame, parent)).pack(pady=10)
 
 def handle_lift_quest(quest, parent_frame, parent):
     style_template()

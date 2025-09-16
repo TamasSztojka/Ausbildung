@@ -199,7 +199,6 @@ def start_quest(detail_frame, quest, parent):
     if handler:
         handler(quest, detail_frame, parent)
     else:
-        # Default/future sensor-based placeholder
         messagebox.showinfo("Coming Soon", "This quest requires a special sensor and is not yet implemented.")
         from view import main_menu_window
         main_menu_window(parent, detail_frame)
