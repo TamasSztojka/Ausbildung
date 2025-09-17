@@ -1,0 +1,30 @@
+from Customer import Customer
+from Validation import Validation
+from datetime import date
+
+class PrivateCustomer(Customer):
+    def __init__(self, name, address, email, phone_number, password, birthday):
+        super().__init__(name, address, email, phone_number, password)
+        self._birthday = self._validate_birthday(birthday)
+
+    @staticmethod
+    def _validate_birthday(value):
+        validated = Validation.validate_birthday(value)
+        if validated is None:
+            raise ValueError("Invalid Birthday. Expected Format: YYYY-MM-DD")
+        return validated
+
+    @property
+    def birthday(self):
+        return self._birthday
+
+    @birthday.setter
+    def birthday(self, value):
+        self._birthday = self._validate_birthday(value)
+
+    def calculate_age(self) -> int:
+        today = date.today()
+        age = today.year - self._birthday.year - (
+            (today.month, today.day) < (self._birthday.month, self._birthday.day)
+        )
+        return age

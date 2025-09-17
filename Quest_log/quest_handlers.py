@@ -144,7 +144,7 @@ def handle_plank_endurance(quest, parent_frame, parent):
     timer_label.pack(pady=10)
 
     total_held: float = 0.0
-    last_tick: Optional[float] = None  # can be None or float
+    last_tick: Optional[float] = None
 
     def update_timer():
         nonlocal total_held, last_tick
@@ -159,7 +159,7 @@ def handle_plank_endurance(quest, parent_frame, parent):
                 total_held += elapsed
                 last_tick = time.time()
         else:
-            last_tick = None  # reset streak but keep accumulated time
+            last_tick = None
 
         timer_label.config(text=f"Time: {int(total_held)}s")
 
@@ -170,9 +170,7 @@ def handle_plank_endurance(quest, parent_frame, parent):
         else:
             parent.after(300, update_timer)  # check again after 300ms
 
-    ttk.Button(
-        plank_frame, text="Start", style="My.TButton", command=lambda: update_timer()
-    ).pack(pady=10)
+    ttk.Button(plank_frame, text="Start", style="My.TButton", command=lambda: update_timer()).pack(pady=10)
     ttk.Button(plank_frame, text="Cancel", style="My.TButton", command=lambda: cancel_and_return(plank_frame, parent)).pack(pady=10)
 
 def handle_lift_quest(quest, parent_frame, parent):
