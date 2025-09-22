@@ -7,11 +7,11 @@ class Clothes(Product):
         self.__color = color
 
     @property
-    def brand(self):
+    def size(self):
         return self.__size
 
-    @brand.setter
-    def brand(self, value):
+    @size.setter
+    def size(self, value):
         self.__size = value
 
     @property

@@ -1,6 +1,8 @@
 from Customer import Customer
+from Exception import DatabaseExecutionError
 from Validation import Validation
 from datetime import date
+
 
 class PrivateCustomer(Customer):
     def __init__(self, name, address, email, phone_number, password, birthday):
@@ -28,3 +30,22 @@ class PrivateCustomer(Customer):
             (today.month, today.day) < (self._birthday.month, self._birthday.day)
         )
         return age
+
+    def save_private_customer(self, storage):
+        conn = storage.connection
+
+        try:
+            conn.autocommit = False
+
+            super().save_customer(storage)
+
+            query = "INSERT INTO private_customers(customer_id, birthday) VALUES (%s, %s)"
+            storage.execute_query(query, (self.id, self.birthday.strftime("%Y-%m-%d")))
+            conn.commit()
+
+        except DatabaseExecutionError as err:
+            conn.rollback()
+            raise DatabaseExecutionError(f"Error while saving private customer: {err}")
+
+        finally:
+            conn.autocommit = True

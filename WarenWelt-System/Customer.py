@@ -1,12 +1,8 @@
 from Validation import *
 
 class Customer(Validation):
-    _id_counter = 1
-
-    def __init__(self, name, address, email, phone_number, password):
-        self.__id = Customer._id_counter
-        Customer._id_counter += 1
-
+    def __init__(self, name, address, email, phone_number, password, customer_id=None):
+        self.__id = customer_id
         self.__name = name
         self.__address = address
         self.__email = email
@@ -74,3 +70,42 @@ class Customer(Validation):
 
     def __str__(self):
         return f"Customer {self.id}: {self.name}, {self.email}, {self.phone_number}"
+
+    def save_customer(self, storage):
+        query = "INSERT INTO customers (name, address, email, phone_number, password)VALUES (%s, %s, %s, %s, %s)"
+        self.__id = storage.execute_query(query, (
+            self.__name,
+            self.__address,
+            self.__email,
+            self.__phone_number,
+            self.__password
+        ))
+
+    @staticmethod
+    def load_customer(storage, customer_id):
+        query = "SELECT id, name, address, email, phone_number, password FROM customers WHERE id = %s"
+        row = storage.fetch_one(query, (customer_id,))
+        if row:
+            return Customer(name=row[1], address=row[2], email=row[3], phone_number=row[4], password=row[5], customer_id=row[0])
+        return None
+
+    def update_customer(self, storage):
+        query = "UPDATE customers SET name = %s ,address = %s, email = %s, phone_number = %s, password = %s WHERE id = %s"
+        storage.execute_query(query, (self.__name, self.__address, self.__email, self.__phone_number, self.__password, self.__id))
+
+    @staticmethod
+    def load_all_customers(storage):
+        query = "SELECT id, name, address, email, phone_number, password FROM customers"
+        rows = storage.fetch_all(query)
+        customers = [
+            Customer(
+                name=row[1],
+                address=row[2],
+                email=row[3],
+                phone_number=row[4],
+                password=row[5],
+                customer_id=row[0]
+            )
+            for row in rows
+        ]
+        return customers

@@ -57,30 +57,68 @@ from Storage import Storage
 
 
 db = Storage("warenwelt_datenbank")
-db.connect()
+try:
+    db.connect()
 
-if db.is_connected():
-    print("Connected to database!")
-else:
-    print("Not connected!")
+    if db.is_connected():
+        print("Connected to database!")
+    else:
+        print("Not connected!")
 
-test_validator()
-test_customer()
-test_private_customer()
-test_company_customer()
+    test_validator()
+    test_customer()
+    test_private_customer()
+    test_company_customer()
 
-all_products = Product.load_all_products(db)
+    all_products = Product.load_all_products(db)
 
-for products in all_products:
-    print(f"ID={products.id}, Name={products.name}, Price={products.price}, Weight={products.weight}")
+    for products in all_products:
+        print(f"ID={products.id}, Name={products.name}, Price={products.price}, Weight={products.weight}")
 
-product_id_to_load = 3
-products = Product.load_product(db, product_id_to_load)
+    product_id_to_load = 3
+    products = Product.load_product(db, product_id_to_load)
 
-if products:
-    print(f"ID={products.id}, Name={products.name}, Price={products.price}, Weight={products.weight}")
-else:
-    print("No product found with that ID.")
+    if products:
+        print(f"ID={products.id}, Name={products.name}, Price={products.price}, Weight={products.weight}")
+    else:
+        print("No product found with that ID.")
+
+    new_customer = Customer(
+        name="Max Mustermann",
+        address="Musterstraße 1",
+        email="maxyzaaa@example.com",
+        phone_number="+49123456789",
+        password="geheim"
+    )
+
+    new_customer.save_customer(db)
+    print("Inserted customer ID:", new_customer.id)
+
+    fetched = Customer.load_customer(db, new_customer.id)
+    print(f"Loaded: ID={fetched.id}, Name={fetched.name}, email={fetched.email}, Phone Number={fetched.phone_number}")
+
+    fetched.name = "Maximilian Mustermann"
+    fetched.update_customer(db)
+
+    for customer in Customer.load_all_customers(db):
+        print(f"ID={customer.id}, Name={customer.name}, Address={customer.address}, Email={customer.email}, Phone={customer.phone_number}")
+        print()
+
+    private_customer = PrivateCustomer(
+        name="Erika Mustermann",
+        address="Nebenstraße 5",
+        email="erikaaaa@example.com",
+        phone_number = "+49111222333",
+        password = "strenggeheim",
+        birthday = "1995-07-14"
+    )
+
+    private_customer.save_private_customer(db)
+    print("Inserted private customer ID:", private_customer.id)
 
 
+except Exception as exception:
+    print("Error:", exception)
+finally:
+    db.disconnect()
 

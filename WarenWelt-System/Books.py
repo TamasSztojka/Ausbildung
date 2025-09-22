@@ -4,7 +4,7 @@ class Books(Product):
     def __init__(self, name, price, weight, author, page_amount):
         super().__init__(name, price, weight)
         self.__author = author
-        self.__page_amount = page_amount#
+        self.__page_amount = page_amount
 
     @property
     def author(self):
