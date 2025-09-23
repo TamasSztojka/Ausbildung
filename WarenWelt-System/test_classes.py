@@ -3,6 +3,7 @@ from Customer import Customer
 from PrivateCustomer import PrivateCustomer
 from CompanyCustomer import CompanyCustomer
 from Product import Product
+from ShoppingCart import ShoppingCart
 
 
 
@@ -86,7 +87,7 @@ try:
     new_customer = Customer(
         name="Max Mustermann",
         address="Musterstraße 1",
-        email="maxyzaaa@example.com",
+        email="maxyzaaaaaaaaaaaa@example.com",
         phone_number="+49123456789",
         password="geheim"
     )
@@ -107,7 +108,7 @@ try:
     private_customer = PrivateCustomer(
         name="Erika Mustermann",
         address="Nebenstraße 5",
-        email="erikaaaa@example.com",
+        email="erikaaaaaaaaaaaa@example.com",
         phone_number = "+49111222333",
         password = "strenggeheim",
         birthday = "1995-07-14"
@@ -116,9 +117,31 @@ try:
     private_customer.save_private_customer(db)
     print("Inserted private customer ID:", private_customer.id)
 
+    customer = Customer.load_customer(db, 1)
+    cart = ShoppingCart(customer, db)
+
+    apple = Product.load_product(db, 4)  # Apple
+    banana = Product.load_product(db, 5)  # Banana
+
+    print("\n--- Test ShoppingCart ---")
+    print("Initial total:", cart.price)
+
+    cart.add_product(apple, 3)
+    print("After adding 3 Apples:", cart.price)
+
+    cart.add_product(banana, 2)
+    print("After adding 2 Bananas:", cart.price)
+
+    cart.remove_product(4)  # remove Apples
+    print("After removing Apples:", cart.price)
+
+    cart.clear_cart()
+    print("After clearing cart:", cart.price)
 
 except Exception as exception:
     print("Error:", exception)
 finally:
+
+
     db.disconnect()
 
