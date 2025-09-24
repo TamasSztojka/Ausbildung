@@ -1,5 +1,5 @@
 import mysql.connector
-from Exception import *
+from controllers.Exception import *
 
 class Storage:
     def __init__(self, warenwelt_datenbank):

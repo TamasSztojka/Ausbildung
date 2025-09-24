@@ -1,6 +1,6 @@
 from Customer import Customer
-from Exception import DatabaseExecutionError
-from Validation import Validation
+from controllers.Exception import DatabaseExecutionError
+from controllers.Validation import Validation
 
 class CompanyCustomer(Customer):
     def __init__(self, name, address, email, phone_number, password, company_number):

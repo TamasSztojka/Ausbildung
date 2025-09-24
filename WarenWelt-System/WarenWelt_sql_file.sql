@@ -85,3 +85,10 @@ CREATE TABLE order_products (
     FOREIGN KEY (order_id) REFERENCES orders(id),
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
+
+INSERT INTO products (name, price, weight)
+VALUES ('Apple', 0.50, 0.2);
+
+INSERT INTO products (name, price, weight)
+VALUES ('Banana', 0.30, 0.15);
+

@@ -1,4 +1,4 @@
-from Validation import *
+from controllers.Validation import *
 
 class Customer(Validation):
     def __init__(self, name, address, email, phone_number, password, customer_id=None):

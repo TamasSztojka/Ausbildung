@@ -1,6 +1,6 @@
 from Customer import Customer
-from Exception import DatabaseExecutionError
-from Validation import Validation
+from controllers.Exception import DatabaseExecutionError
+from controllers.Validation import Validation
 from datetime import date
 
 
