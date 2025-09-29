@@ -109,3 +109,18 @@ class Customer(Validation):
             for row in rows
         ]
         return customers
+
+    @staticmethod
+    def authenticate(storage, email, password):
+        query = "SELECT id, name, address, email, phone_number, password FROM customers WHERE email = %s AND password = %s"
+        row = storage.fetch_one(query, (email, password))
+        if row:
+            return Customer(
+                name=row[1],
+                address=row[2],
+                email=row[3],
+                phone_number=row[4],
+                password=row[5],
+                customer_id=row[0]
+            )
+        return None

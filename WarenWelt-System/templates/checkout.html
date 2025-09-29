@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Checkout</h2>
+    <div class="layout">
+      <!-- LEFT SIDE: PAYMENT OPTIONS -->
+      <div class="checkout-options">
+        <form>
+          <h3>Select Payment Method</h3>
+          <label>
+            <input type="radio" name="payment" value="card"> Card
+          </label><br>
+          <label>
+            <input type="radio" name="payment" value="cash"> Cash
+          </label>
+        </form>
+      </div>
+
+      <!-- RIGHT SIDE: ACTION BUTTONS -->
+      <div class="sidebar">
+        <button onclick="window.location.href='{{ url_for('cart') }}'">Back to Cart</button>
+        <button>Confirm Order</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Products</h2>
+    <div class="layout">
+      <!-- LEFT SIDE: PRODUCTS -->
+      <div class="products">
+        {% for product in products %}
+          <div class="product-card">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.price }} €</p>
+            <form method="POST" action="{{ url_for('cart') }}">
+              <input type="hidden" name="product_id" value="{{ product.id }}">
+              <button type="submit">Add to Cart</button>
+            </form>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- RIGHT SIDE: ACTION BUTTONS -->
+      <div class="sidebar">
+        <button onclick="window.location.href='{{ url_for('login') }}'">Login</button>
+        <button class="register-button" onclick="window.location.href='{{ url_for('register') }}'">Register</button>
+        <button onclick="window.location.href='{{ url_for('cart') }}'">View Cart</button>
+        <button onclick="window.location.href='{{ url_for('checkout') }}'">Checkout</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

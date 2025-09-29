@@ -15,6 +15,8 @@ class Storage:
                     password="Sztojka5728",
                     database=self.__warenwelt_datenbank
                 )
+                self.connection.autocommit = True
+
         except mysql.connector.Error as err:
             raise DatabaseConnectionError(f"Connection failed: {err}")
 
