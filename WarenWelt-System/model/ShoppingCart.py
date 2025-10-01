@@ -1,4 +1,4 @@
-from Storage import Storage
+from model.Storage import Storage
 from decimal import Decimal
 
 class ShoppingCart:
@@ -25,6 +25,10 @@ class ShoppingCart:
     @property
     def price(self):
         return self.__price
+
+    @property
+    def cart_id(self):
+        return self.__cart_id
 
     def add_product(self, product, quantity=1):
         self.__products.append((product, quantity))

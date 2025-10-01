@@ -1,4 +1,4 @@
-from Storage import Storage
+from model.Storage import Storage
 
 class Product:
     def __init__(self, name, price, weight, product_id=None):

@@ -1,7 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from model.Customer import Customer
 from controllers.Validation import Validation
 from model.Storage import Storage
+from model.ShoppingCart import ShoppingCart
+from model.Electronics import Electronics
+from model.Clothes import Clothes
+from model.Books import Books
+from model.Product import Product
 
 app = Flask(__name__)
 app.secret_key = "my_secret_key"
@@ -9,32 +14,34 @@ app.secret_key = "my_secret_key"
 storage = Storage("warenwelt_datenbank")
 storage.connect()
 
-products = [
-    {"id": 1, "name": "Laptop", "price": 999},
-    {"id": 2, "name": "Phone", "price": 499},
-    {"id": 3, "name": "Headphones", "price": 99},
-    {"id": 4, "name": "Smartwatch", "price": 199},
-]
-
 @app.route("/")
+@app.route("/products")
 def products_page():
-    return render_template("products.html", products=products)
+    selected_category = request.args.get("category", "")
+    selected_sort = request.args.get("sort", "")
 
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("password")
+    products = []
+    if selected_category == "Electronics":
+        products = Electronics.load_all(storage, sort=selected_sort)
+    elif selected_category == "Clothes":
+        products = Clothes.load_all(storage, sort=selected_sort)
+    elif selected_category == "Books":
+        products = Books.load_all(storage, sort=selected_sort)
+    else:
+        # All categories combined
+        products = (
+            Electronics.load_all(storage, sort=selected_sort)
+            + Clothes.load_all(storage, sort=selected_sort)
+            + Books.load_all(storage, sort=selected_sort)
+        )
 
-        customer = Customer.authenticate(storage, email, password)
-
-        if customer:
-            flash("Login Successful", "success")
-            return redirect(url_for("products_page"))
-        else:
-            flash("Invalid email or password", "error")
-
-    return render_template("login.html")
+    return render_template(
+        "products.html",
+        products=products,
+        categories=["Electronics", "Clothes", "Books"],
+        selected_category=selected_category,
+        selected_sort=selected_sort,
+    )
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -84,10 +91,46 @@ def validate_entrys(name, address, email, phone_number, password):
         errors.append("Password must be at least 8 characters, contain letters and numbers.")
     return errors
 
-@app.route("/cart")
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        customer = Customer.authenticate(storage, email, password)
+
+        if customer:
+            flash("Login Successful", "success")
+
+            cart = ShoppingCart(customer, storage)
+            session["customer_id"] = customer.id
+            session["cart_id"] = cart.cart_id
+
+            return redirect(url_for("products_page"))
+        else:
+            flash("Invalid email or password", "error")
+
+    return render_template("login.html")
+
+@app.route("/cart", methods=["GET", "POST"])
+@app.route("/cart", methods=["GET", "POST"])
 def cart():
-    cart = []  # dummy cart
-    return render_template("cart.html", cart=cart)
+    if "cart" not in session:
+        session["cart"] = []
+
+    if request.method == "POST":
+        product_id = int(request.form.get("product_id"))
+        product = Product.load_product(storage, product_id)
+        if product:
+            session["cart"].append({
+                "id": product.id,
+                "name": product.name,
+                "price": product.price
+            })
+            session.modified = True
+            flash(f"{product.name} added to cart", "success")
+
+    return render_template("cart.html", cart=session["cart"])
 
 @app.route("/checkout")
 def checkout():

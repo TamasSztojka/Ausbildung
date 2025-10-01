@@ -8,22 +8,54 @@
 <body>
   <div class="container">
     <h2>Products</h2>
+
+    <!-- Filter + Sort -->
+    <form method="get" class="filters">
+      <label for="category">Category:</label>
+      <select id="category" name="category" onchange="this.form.submit()">
+        <option value="" {% if not category %}selected{% endif %}>All</option>
+        <option value="Electronics" {% if category == 'Electronics' %}selected{% endif %}>Electronics</option>
+        <option value="Clothes" {% if category == 'Clothes' %}selected{% endif %}>Clothes</option>
+        <option value="Books" {% if category == 'Books' %}selected{% endif %}>Books</option>
+      </select>
+
+      <label for="sort">Sort:</label>
+      <select id="sort" name="sort" onchange="this.form.submit()">
+        <option value="" {% if not sort %}selected{% endif %}>—</option>
+        <option value="price" {% if sort == 'price' %}selected{% endif %}>Price</option>
+        <option value="name" {% if sort == 'name' %}selected{% endif %}>Name</option>
+      </select>
+    </form>
+
+    <!-- Layout: left (products), right (sidebar) -->
     <div class="layout">
-      <!-- LEFT SIDE: PRODUCTS -->
+      <!-- Products -->
       <div class="products">
         {% for product in products %}
           <div class="product-card">
             <h3>{{ product.name }}</h3>
             <p>{{ product.price }} €</p>
-            <form method="POST" action="{{ url_for('cart') }}">
+
+            {% if product.__class__.__name__ == "Electronics" %}
+              <small>{{ product.brand }} — {{ product.warranty_years }} years</small>
+            {% elif product.__class__.__name__ == "Clothes" %}
+              <small>Size: {{ product.size }}, Color: {{ product.color }}</small>
+            {% elif product.__class__.__name__ == "Books" %}
+              <small>{{ product.author }} — {{ product.page_amount }} pages</small>
+            {% endif %}
+
+            <form method="post" action="{{ url_for('cart') }}">
               <input type="hidden" name="product_id" value="{{ product.id }}">
+              <input type="hidden" name="action" value="add">
               <button type="submit">Add to Cart</button>
             </form>
           </div>
+        {% else %}
+          <p>No products found.</p>
         {% endfor %}
       </div>
 
-      <!-- RIGHT SIDE: ACTION BUTTONS -->
+      <!-- Sidebar -->
       <div class="sidebar">
         <button onclick="window.location.href='{{ url_for('login') }}'">Login</button>
         <button class="register-button" onclick="window.location.href='{{ url_for('register') }}'">Register</button>

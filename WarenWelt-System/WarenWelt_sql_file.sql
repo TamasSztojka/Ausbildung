@@ -86,9 +86,30 @@ CREATE TABLE order_products (
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
-INSERT INTO products (name, price, weight)
-VALUES ('Apple', 0.50, 0.2);
+INSERT INTO products (name, price, weight) VALUES ('Laptop Pro 15"', 1299.99, 2.3);
+INSERT INTO electronics (product_id, brand, warranty_years) VALUES (LAST_INSERT_ID(), 'TechBrand', 2);
 
-INSERT INTO products (name, price, weight)
-VALUES ('Banana', 0.30, 0.15);
+INSERT INTO products (name, price, weight) VALUES ('Smartphone X12', 799.00, 0.4);
+INSERT INTO electronics (product_id, brand, warranty_years) VALUES (LAST_INSERT_ID(), 'PhoneCorp', 2);
+
+INSERT INTO products (name, price, weight) VALUES ('Noise Cancelling Headphones', 199.99, 0.25);
+INSERT INTO electronics (product_id, brand, warranty_years) VALUES (LAST_INSERT_ID(), 'SoundMax', 1);
+
+INSERT INTO products (name, price, weight) VALUES ('Classic T-Shirt', 19.99, 0.2);
+INSERT INTO clothes (product_id, size, color) VALUES (LAST_INSERT_ID(), 'M', 'Black');
+
+INSERT INTO products (name, price, weight) VALUES ('Blue Jeans', 49.90, 0.8);
+INSERT INTO clothes (product_id, size, color) VALUES (LAST_INSERT_ID(), 'L', 'Blue');
+
+INSERT INTO products (name, price, weight) VALUES ('Hoodie', 39.50, 0.6);
+INSERT INTO clothes (product_id, size, color) VALUES (LAST_INSERT_ID(), 'XL', 'Gray');
+
+INSERT INTO products (name, price, weight) VALUES ('The Great Adventure', 14.99, 0.5);
+INSERT INTO books (product_id, author, page_amount) VALUES (LAST_INSERT_ID(), 'John Writer', 320);
+
+INSERT INTO products (name, price, weight) VALUES ('Learning Python', 39.95, 1.2);
+INSERT INTO books (product_id, author, page_amount) VALUES (LAST_INSERT_ID(), 'Guido Programmer', 850);
+
+INSERT INTO products (name, price, weight) VALUES ('Mystery of the Old House', 9.99, 0.3);
+INSERT INTO books (product_id, author, page_amount) VALUES (LAST_INSERT_ID(), 'Anna Mystery', 210);
 
