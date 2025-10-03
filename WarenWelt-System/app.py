@@ -7,16 +7,21 @@ from model.Electronics import Electronics
 from model.Clothes import Clothes
 from model.Books import Books
 from model.Product import Product
+from model.Order import Order
 
 app = Flask(__name__)
 app.secret_key = "my_secret_key"
 
-storage = Storage("warenwelt_datenbank")
-storage.connect()
+def get_storage():
+    storage = Storage("warenwelt_datenbank")
+    storage.connect()
+    return storage
+
 
 @app.route("/")
 @app.route("/products")
 def products_page():
+    storage = get_storage()
     selected_category = request.args.get("category", "")
     selected_sort = request.args.get("sort", "")
 
@@ -28,7 +33,6 @@ def products_page():
     elif selected_category == "Books":
         products = Books.load_all(storage, sort=selected_sort)
     else:
-        # All categories combined
         products = (
             Electronics.load_all(storage, sort=selected_sort)
             + Clothes.load_all(storage, sort=selected_sort)
@@ -42,6 +46,7 @@ def products_page():
         selected_category=selected_category,
         selected_sort=selected_sort,
     )
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -60,6 +65,7 @@ def register():
             return render_template("register.html")
 
         try:
+            storage = get_storage()
             customer = Customer(
                 name=name,
                 address=address,
@@ -77,6 +83,7 @@ def register():
 
     return render_template("register.html")
 
+
 def validate_entrys(name, address, email, phone_number, password):
     errors = []
     if not Validation.validate_name(name):
@@ -91,12 +98,14 @@ def validate_entrys(name, address, email, phone_number, password):
         errors.append("Password must be at least 8 characters, contain letters and numbers.")
     return errors
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         email = request.form.get("email")
         password = request.form.get("password")
 
+        storage = get_storage()
         customer = Customer.authenticate(storage, email, password)
 
         if customer:
@@ -112,7 +121,7 @@ def login():
 
     return render_template("login.html")
 
-@app.route("/cart", methods=["GET", "POST"])
+
 @app.route("/cart", methods=["GET", "POST"])
 def cart():
     if "cart" not in session:
@@ -120,7 +129,10 @@ def cart():
 
     if request.method == "POST":
         product_id = int(request.form.get("product_id"))
+
+        storage = get_storage()
         product = Product.load_product(storage, product_id)
+
         if product:
             session["cart"].append({
                 "id": product.id,
@@ -132,10 +144,42 @@ def cart():
 
     return render_template("cart.html", cart=session["cart"])
 
-@app.route("/checkout")
+@app.route("/checkout", methods=["GET", "POST"])
 def checkout():
+    if request.method == "POST":
+        delivery_method = request.form.get("delivery")
+
+        if "cart" not in session or not session["cart"]:
+            flash("Your cart is empty!", "error")
+            return redirect(url_for("cart"))
+
+        storage = get_storage()
+        products = []
+        for item in session["cart"]:
+            product = Product.load_product(storage, item["id"])
+            if product:
+                products.append((product, 1))
+
+        storage = get_storage()
+        customer = None
+        if "customer_id" in session:
+            customer = Customer.load_customer(storage, session["customer_id"])
+
+        if not customer:
+            flash("Please login to order", "error")
+            return redirect(url_for("login"))
+
+        order = Order(customer, products)
+        order.create_invoice("invoice.txt")
+
+        session["cart"] = []
+        session.modified = True
+
+        flash(f"Order Confirmed ({'Delivery' if delivery_method=='delivery' else 'Pickup'})", "success")
+        return redirect(url_for("products_page"))
+
     return render_template("checkout.html")
 
 
-app.run(debug=True)
-
+if __name__ == "__main__":
+    app.run(debug=True)

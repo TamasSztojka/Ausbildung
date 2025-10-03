@@ -9,23 +9,22 @@
   <div class="container">
     <h2>Checkout</h2>
     <div class="layout">
-      <!-- LEFT SIDE: PAYMENT OPTIONS -->
+      <!-- LEFT SIDE: DELIVERY OPTIONS -->
       <div class="checkout-options">
-        <form>
-          <h3>Select Payment Method</h3>
+        <form method="POST" action="{{ url_for('checkout') }}">
+          <h3>Liefermethode wählen</h3>
           <label>
-            <input type="radio" name="payment" value="card"> Card
+            <input type="radio" name="delivery" value="delivery" required> Lieferung
           </label><br>
           <label>
-            <input type="radio" name="payment" value="cash"> Cash
+            <input type="radio" name="delivery" value="pickup" required> Abholung
           </label>
-        </form>
-      </div>
 
-      <!-- RIGHT SIDE: ACTION BUTTONS -->
-      <div class="sidebar">
-        <button onclick="window.location.href='{{ url_for('cart') }}'">Back to Cart</button>
-        <button>Confirm Order</button>
+          <div class="sidebar" style="margin-top:20px;">
+            <button type="button" onclick="window.location.href='{{ url_for('cart') }}'">Zurück zum Warenkorb</button>
+            <button type="submit">Bestellung bestätigen</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

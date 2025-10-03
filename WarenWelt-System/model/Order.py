@@ -1,6 +1,6 @@
 from datetime import datetime
 from decimal import Decimal
-from CompanyCustomer import CompanyCustomer
+from model.CompanyCustomer import CompanyCustomer
 
 class Order:
     def __init__(self, customer, products = None):

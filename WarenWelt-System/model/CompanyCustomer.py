@@ -1,4 +1,4 @@
-from Customer import Customer
+from model.Customer import Customer
 from controllers.Exception import DatabaseExecutionError
 from controllers.Validation import Validation
 
