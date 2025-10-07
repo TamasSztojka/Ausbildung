@@ -1,9 +1,0 @@
-==== INVOICE ====
-Customer: John Doe
-Date: 2025-09-23 13:24:38.645181
-
-Products:
-- Apple (3x) = 1.50
-- Banana (2x) = 0.60
-
-Total: 2.10

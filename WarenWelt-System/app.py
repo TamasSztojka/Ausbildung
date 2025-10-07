@@ -128,19 +128,28 @@ def cart():
         session["cart"] = []
 
     if request.method == "POST":
+        action = request.form.get("action")
         product_id = int(request.form.get("product_id"))
 
-        storage = get_storage()
-        product = Product.load_product(storage, product_id)
+        if action == "add":
+            storage = get_storage()
+            product = Product.load_product(storage, product_id)
+            if product:
+                session["cart"].append({
+                    "id": product.id,
+                    "name": product.name,
+                    "price": product.price
+                })
+                session.modified = True
+                flash(f"{product.name} added to cart", "success")
 
-        if product:
-            session["cart"].append({
-                "id": product.id,
-                "name": product.name,
-                "price": product.price
-            })
-            session.modified = True
-            flash(f"{product.name} added to cart", "success")
+        elif action == "remove":
+            for item in session["cart"]:
+                if item["id"] == product_id:
+                    session["cart"].remove(item)
+                    session.modified = True
+                    flash(f"{item['name']} removed from cart", "info")
+                    break
 
     return render_template("cart.html", cart=session["cart"])
 
@@ -170,7 +179,7 @@ def checkout():
             return redirect(url_for("login"))
 
         order = Order(customer, products)
-        order.create_invoice("invoice.txt")
+        order.create_invoice()
 
         session["cart"] = []
         session.modified = True

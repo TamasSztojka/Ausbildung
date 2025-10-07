@@ -1,0 +1,8 @@
+==== Invoice ====
+Customer: Jon Snow
+Date: 2025-10-06 06:00:55
+
+Products:
+- Laptop Pro 15" (1x) = 1299.99 €
+
+Total Sum: 1299.99 €

@@ -43,20 +43,25 @@ class Order:
 
         self.__total = total_sum
 
-    def create_invoice(self, filename="invoice.txt"):
+    def create_invoice(self):
+        now = datetime.now()
+        ordering_time = now.strftime("%Y-%m-%d %H:%M:%S")  # readable timestamp
+        timestamp = now.strftime("%Y-%m-%d_%H%M%S")  # filename timestamp
+        filename = f"Invoice_{timestamp}.txt"
+
         with open(filename, "w", encoding="utf-8") as f:
-            f.write("==== INVOICE ====\n")
+            f.write("==== Invoice ====\n")
             f.write(f"Customer: {self.__customer.name}\n")
-            f.write(f"Date: {self.__order_time}\n\n")
+            f.write(f"Date: {ordering_time}\n\n")
             f.write("Products:\n")
             for product, quantity in self.__products:
                 price_as_decimal = Decimal(str(product.price))
                 line_total = price_as_decimal * quantity
-                f.write(f"- {product.name} ({quantity}x) = {line_total:.2f}\n")
+                f.write(f"- {product.name} ({quantity}x) = {line_total:.2f} €\n")
 
             f.write("\n")
-            f.write(f"Total: {self.__total:.2f}\n")
+            f.write(f"Total Sum: {self.__total:.2f} €\n")
 
-        print(f"Invoice written to {filename}")
+        print(f"Invoice created: {filename}")
 
 
