@@ -10,7 +10,7 @@ void main() {
     int secondOpen = text.lastIndexOf('[');
     int secondClose = text.lastIndexOf(']');
 
-    if (firstOpen == -1 || firstClose == -1 || secondOpen == -1 || SSSSsecondClose == -1) {
+    if (firstOpen == -1 || firstClose == -1 || secondOpen == -1 || secondClose == -1) {
         System.out.println("Error: The entry isn't Valid.");
         return;
     }
