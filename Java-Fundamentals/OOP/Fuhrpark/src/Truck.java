@@ -19,11 +19,15 @@ public class Truck extends Vehicles {
         double extraLoadFactor = currentLoad / loadCapacity;
         double adjustedConsumption =
                 (consumptionPer100km / 100) * kilometers * (1 + extraLoadFactor * 0.2);
+
         if (currentFuel >= adjustedConsumption) {
             currentFuel -= adjustedConsumption;
             super.drive(kilometers);
+
+            System.out.printf("%s drove %.1f km. Remaining fuel: %.1f / %.1f L (Load: %.1f / %.1f kg)%n",
+                    getModel(), kilometers, currentFuel, fuelCapacity, currentLoad, loadCapacity);
         } else {
-            System.out.println("Not enough fuel for this trip!");
+            System.out.println("Not enough fuel for this trip! (" + getModel() + ")");
         }
     }
 

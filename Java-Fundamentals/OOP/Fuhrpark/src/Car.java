@@ -17,9 +17,13 @@ public class Car extends Vehicles {
     @Override
     public void drive(double kilometers) {
         double consumption = (consumptionPer100km / 100) * kilometers;
+
         if (currentFuel >= consumption) {
             currentFuel -= consumption;
-            super.drive(kilometers);
+            super.drive(kilometers); // handles mileage + generic print
+
+            System.out.printf("%s remaining fuel: %.1f / %.1f L%n",
+                    getModel(), currentFuel, fuelCapacity);
         } else {
             System.out.println("Not enough fuel! (" + getModel() + ")");
         }
@@ -46,5 +50,37 @@ public class Car extends Vehicles {
 
     public double getFuelCapacity() {
         return fuelCapacity;
+    }
+
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
+
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
+    }
+
+    public double getTrunkVolume() {
+        return trunkVolume;
+    }
+
+    public void setTrunkVolume(double trunkVolume) {
+        this.trunkVolume = trunkVolume;
+    }
+
+    public void setFuelCapacity(double fuelCapacity) {
+        this.fuelCapacity = fuelCapacity;
+    }
+
+    public void setCurrentFuel(double currentFuel) {
+        this.currentFuel = currentFuel;
+    }
+
+    public double getConsumptionPer100km() {
+        return consumptionPer100km;
+    }
+
+    public void setConsumptionPer100km(double consumptionPer100km) {
+        this.consumptionPer100km = consumptionPer100km;
     }
 }

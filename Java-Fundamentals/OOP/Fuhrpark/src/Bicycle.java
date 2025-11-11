@@ -23,4 +23,20 @@ public class Bicycle extends Vehicles {
 
     public String getType() { return type; }
     public int getGears() { return gears; }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setGears(int gears) {
+        this.gears = gears;
+    }
+
+    public double getBatteryCapacity() {
+        return batteryCapacity;
+    }
+
+    public void setBatteryCapacity(double batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
+    }
 }

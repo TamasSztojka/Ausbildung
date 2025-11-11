@@ -15,11 +15,15 @@ public class Bike extends Vehicles {
     @Override
     public void drive(double kilometers) {
         double consumption = (consumptionPer100km / 100) * kilometers;
+
         if (currentFuel >= consumption) {
             currentFuel -= consumption;
             super.drive(kilometers);
+
+            System.out.printf("%s drove %.1f km. Remaining fuel: %.1f / %.1f L%n",
+                    getModel(), kilometers, currentFuel, fuelCapacity);
         } else {
-            System.out.println("Not enough fuel!");
+            System.out.println("Not enough fuel! (" + getModel() + ")");
         }
     }
 
