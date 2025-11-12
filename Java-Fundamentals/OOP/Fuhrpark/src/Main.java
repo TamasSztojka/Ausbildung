@@ -8,9 +8,10 @@ public class Main {
         VehicleManager manager = new VehicleManager();
         Menu menu = new Menu();
 
-        String entries = "Create new vehicle,Show all vehicles,Drive a vehicle,Refuel a vehicle,Exit";
+        String entries = "Create new vehicle,Show all vehicles,Drive a vehicle,Refuel a vehicle,Load/Unload Truck,Exit";
         String[] entriesSplit = entries.split(",");
         ArrayList<String> myMenuEntries = new ArrayList<>(Arrays.asList(entriesSplit));
+
 
         int choice;
         do {
@@ -21,9 +22,10 @@ public class Main {
                 case 2 -> manager.listVehicles();
                 case 3 -> manager.driveVehicle();
                 case 4 -> manager.refuelVehicle();
-                case 5 -> System.out.println("Exiting program...");
+                case 5 -> manager.manageTruckLoad();
+                case 6 -> System.out.println("Exiting program...");
                 default -> System.out.println("Invalid choice!");
             }
-        } while (choice != 5);
+        } while (choice != 6);
     }
 }

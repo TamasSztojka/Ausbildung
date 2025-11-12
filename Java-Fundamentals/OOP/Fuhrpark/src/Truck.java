@@ -45,6 +45,24 @@ public class Truck extends Vehicles {
                 currentFuel, fuelCapacity, currentLoad, loadCapacity);
     }
 
+    public void load(double weight) {
+        if (currentLoad + weight <= loadCapacity) {
+            currentLoad += weight;
+            System.out.println(weight + " kg loaded. Current load: " + currentLoad + " kg.");
+        } else {
+            System.out.println("Load too heavy! Max capacity: " + loadCapacity + " kg.");
+        }
+    }
+
+    public void unload(double weight) {
+        if (weight <= currentLoad) {
+            currentLoad -= weight;
+            System.out.println(weight + " kg unloaded. Remaining load: " + currentLoad + " kg.");
+        } else {
+            System.out.println("Cannot unload more than current load!");
+        }
+    }
+
     public double getCurrentLoad() {
         return currentLoad;
     }

@@ -72,6 +72,7 @@ public class VehicleManager {
             for (int i = 0; i < vehicles.size(); i++) {
                 System.out.println((i + 1) + ". " + vehicles.get(i).getInfo());
             }
+            System.out.println();
         }
     }
 
@@ -125,6 +126,49 @@ public class VehicleManager {
             Database.updateVehicle(selected);
         } else {
             System.out.println("Invalid vehicle selection!");
+        }
+    }
+
+    public void manageTruckLoad() {
+        if (vehicles.isEmpty()) {
+            System.out.println("No vehicles to manage!");
+            return;
+        }
+
+        listVehicles();
+        System.out.print("Select vehicle number: ");
+        int index = scanner.nextInt() - 1;
+
+        if (index < 0 || index >= vehicles.size()) {
+            System.out.println("Invalid selection!");
+            return;
+        }
+
+        Vehicles v = vehicles.get(index);
+        if (!(v instanceof Truck truck)) {
+            System.out.println("Selected vehicle is not a truck!");
+            return;
+        }
+
+        System.out.println("\n1 - Load truck");
+        System.out.println("2 - Unload truck");
+        System.out.print("Your choice: ");
+        int action = scanner.nextInt();
+
+        switch (action) {
+            case 1 -> {
+                System.out.print("Enter weight to load (kg): ");
+                double weight = scanner.nextDouble();
+                truck.load(weight);
+                Database.updateVehicle(truck); // save new load to DB
+            }
+            case 2 -> {
+                System.out.print("Enter weight to unload (kg): ");
+                double weight = scanner.nextDouble();
+                truck.unload(weight);
+                Database.updateVehicle(truck);
+            }
+            default -> System.out.println("Invalid action!");
         }
     }
 }

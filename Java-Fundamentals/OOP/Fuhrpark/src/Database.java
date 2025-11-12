@@ -2,9 +2,11 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class Database {
+
+    // ====== Database connection variables ======
     private static final String URL = "jdbc:mysql://localhost:3306/vehiclepark";
-    private static final String USER = "root";
-    private static final String PASSWORD = "Sztojka5728";
+    private static final String USER = "root";                // your MySQL username
+    private static final String PASSWORD = "Sztojka5728";   // your MySQL password
 
     public static Connection connect() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
@@ -16,7 +18,7 @@ public class Database {
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 type VARCHAR(50) NOT NULL,
                 manufacturer VARCHAR(100) NOT NULL,
-                model VARCHAR(100) NOT NULL,
+                model VARCHAR(100) NOT NULL UNIQUE,
                 year INT NOT NULL,
                 mileage DOUBLE,
                 fuelCurrent DOUBLE,
@@ -31,83 +33,137 @@ public class Database {
             );
         """;
 
-        try (Connection conn = connect();
-             Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
+        try (Connection conn = connect(); Statement statement = conn.createStatement()) {
+            statement.execute(sql);
             System.out.println("MySQL table ready!");
         } catch (SQLException e) {
             System.out.println("Database initialization failed: " + e.getMessage());
         }
     }
 
-    private static double[] getFuelData(Vehicles v) {
+    private static double[] getFuelData(Vehicles vehicle) {
         double currentFuel = 0.0;
         double fuelCapacity = 0.0;
 
-        if (v instanceof Car car) {
+        if (vehicle instanceof Car car) {
             currentFuel = car.getCurrentFuel();
             fuelCapacity = car.getFuelCapacity();
-        } else if (v instanceof Truck truck) {
+        } else if (vehicle instanceof Truck truck) {
             currentFuel = truck.getCurrentFuel();
             fuelCapacity = truck.getFuelCapacity();
-        } else if (v instanceof Bike bike) {
+        } else if (vehicle instanceof Bike bike) {
             currentFuel = bike.getCurrentFuel();
             fuelCapacity = bike.getFuelCapacity();
         }
-
         return new double[]{currentFuel, fuelCapacity};
     }
 
-    public static void saveVehicle(Vehicles v) {
+    // Get subclass-specific values (like seats, gears, etc.)
+    private static Object[] getSpecificData(Vehicles vehicle) {
+        int seats = 0;
+        int gears = 0;
+        double trunkVolume = 0.0;
+        double loadCapacity = 0.0;
+        double currentLoad = 0.0;
+        boolean helmetAvailable = false;
+        String bikeType = null;
+
+        if (vehicle instanceof Car car) {
+            seats = car.getNumberOfSeats();
+            trunkVolume = car.getTrunkVolume();
+        } else if (vehicle instanceof Truck truck) {
+            loadCapacity = truck.getLoadCapacity();
+            currentLoad = truck.getCurrentLoad();
+        } else if (vehicle instanceof Bike bike) {
+            helmetAvailable = bike.isHelmetAvailable();
+        } else if (vehicle instanceof Bicycle bicycle) {
+            gears = bicycle.getGears();
+            bikeType = bicycle.getType();
+        }
+
+        return new Object[]{seats, trunkVolume, loadCapacity, currentLoad, helmetAvailable, gears, bikeType};
+    }
+
+    private static void applyFuelData(Vehicles vehicle, double fuelCurrent, double fuelCapacity) {
+        if (vehicle instanceof Car car) {
+            car.setCurrentFuel(fuelCurrent);
+            car.setFuelCapacity(fuelCapacity);
+        } else if (vehicle instanceof Truck truck) {
+            truck.setCurrentFuel(fuelCurrent);
+            truck.setFuelCapacity(fuelCapacity);
+        } else if (vehicle instanceof Bike bike) {
+            bike.setCurrentFuel(fuelCurrent);
+            bike.setFuelCapacity(fuelCapacity);
+        }
+    }
+
+    public static void saveVehicle(Vehicles vehicle) {
         String sql = """
             INSERT INTO vehicles
-            (type, manufacturer, model, year, mileage, fuelCurrent, fuelCapacity)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            (type, manufacturer, model, year, mileage,
+             fuelCurrent, fuelCapacity, seats, trunkVolume,
+             loadCapacity, currentLoad, helmetAvailable, gears, bikeType)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """;
 
-        try (Connection conn = connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (Connection connection = connect(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            double[] fuel = getFuelData(vehicle);
+            Object[] data = getSpecificData(vehicle);
 
-            double[] fuelData = getFuelData(v);
+            preparedStatement.setString(1, vehicle.getClass().getSimpleName());
+            preparedStatement.setString(2, vehicle.getManufacturer());
+            preparedStatement.setString(3, vehicle.getModel());
+            preparedStatement.setInt(4, vehicle.getYear());
+            preparedStatement.setDouble(5, vehicle.getMileage());
+            preparedStatement.setDouble(6, fuel[0]);
+            preparedStatement.setDouble(7, fuel[1]);
+            preparedStatement.setInt(8, (int) data[0]);
+            preparedStatement.setDouble(9, (double) data[1]);
+            preparedStatement.setDouble(10, (double) data[2]);
+            preparedStatement.setDouble(11, (double) data[3]);
+            preparedStatement.setBoolean(12, (boolean) data[4]);
+            preparedStatement.setInt(13, (int) data[5]);
+            preparedStatement.setString(14, (String) data[6]);
 
-            pstmt.setString(1, v.getClass().getSimpleName());
-            pstmt.setString(2, v.getManufacturer());
-            pstmt.setString(3, v.getModel());
-            pstmt.setInt(4, v.getYear());
-            pstmt.setDouble(5, v.getMileage());
-            pstmt.setDouble(6, fuelData[0]);
-            pstmt.setDouble(7, fuelData[1]);
+            preparedStatement.executeUpdate();
+            System.out.println("Saved to database: " + vehicle.getModel());
 
-            pstmt.executeUpdate();
-            System.out.println("Saved to database: " + v.getModel());
         } catch (SQLException e) {
             System.out.println("Error saving vehicle: " + e.getMessage());
         }
     }
 
-    public static void updateVehicle(Vehicles v) {
+    public static void updateVehicle(Vehicles vehicle) {
         String sql = """
-            UPDATE vehicles
-            SET mileage = ?, fuelCurrent = ?, fuelCapacity = ?
-            WHERE model = ?;
+            UPDATE vehicles SET
+                mileage=?, fuelCurrent=?, fuelCapacity=?,
+                seats=?, trunkVolume=?, loadCapacity=?, currentLoad=?,
+                helmetAvailable=?, gears=?, bikeType=?
+            WHERE model=?;
         """;
 
-        try (Connection conn = connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (Connection conn = connect(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            double[] fuel = getFuelData(vehicle);
+            Object[] data = getSpecificData(vehicle);
 
-            double[] fuelData = getFuelData(v);
+            ps.setDouble(1, vehicle.getMileage());
+            ps.setDouble(2, fuel[0]);
+            ps.setDouble(3, fuel[1]);
+            ps.setInt(4, (int) data[0]);
+            ps.setDouble(5, (double) data[1]);
+            ps.setDouble(6, (double) data[2]);
+            ps.setDouble(7, (double) data[3]);
+            ps.setBoolean(8, (boolean) data[4]);
+            ps.setInt(9, (int) data[5]);
+            ps.setString(10, (String) data[6]);
+            ps.setString(11, vehicle.getModel());
 
-            pstmt.setDouble(1, v.getMileage());
-            pstmt.setDouble(2, fuelData[0]);
-            pstmt.setDouble(3, fuelData[1]);
-            pstmt.setString(4, v.getModel());
+            int rows = ps.executeUpdate();
+            if (rows > 0)
+                System.out.println("Updated vehicle: " + vehicle.getModel());
+            else
+                System.out.println("No matching vehicle found for update: " + vehicle.getModel());
 
-            int rows = pstmt.executeUpdate();
-            if (rows > 0) {
-                System.out.println("Updated vehicle in database: " + v.getModel());
-            } else {
-                System.out.println("No matching vehicle found for update: " + v.getModel());
-            }
         } catch (SQLException e) {
             System.out.println("Error updating vehicle: " + e.getMessage());
         }
@@ -118,46 +174,41 @@ public class Database {
         String sql = "SELECT * FROM vehicles";
 
         try (Connection conn = connect();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+             Statement statement = conn.createStatement();
+             ResultSet resultSet = statement.executeQuery(sql)) {
 
-            while (rs.next()) {
-                String type = rs.getString("type");
-                String manufacturer = rs.getString("manufacturer");
-                String model = rs.getString("model");
-                int year = rs.getInt("year");
-                double mileage = rs.getDouble("mileage");
-                double fuelCurrent = rs.getDouble("fuelCurrent");
-                double fuelCapacity = rs.getDouble("fuelCapacity");
+            while (resultSet.next()) {
+                String type = resultSet.getString("type");
+                String manufacturer = resultSet.getString("manufacturer");
+                String model = resultSet.getString("model");
+                int year = resultSet.getInt("year");
+                double mileage = resultSet.getDouble("mileage");
+                double fuelCurrent = resultSet.getDouble("fuelCurrent");
+                double fuelCapacity = resultSet.getDouble("fuelCapacity");
 
                 Vehicles v = switch (type) {
-                    case "Car" -> new Car(manufacturer, model, year, 5, 400);
-                    case "Truck" -> new Truck(manufacturer, model, year, 12000);
-                    case "Bike" -> new Bike(manufacturer, model, year, true);
-                    case "Bicycle" -> new Bicycle(manufacturer, model, year, "Citybike", 6);
+                    case "Car" -> new Car(manufacturer, model, year,
+                            resultSet.getInt("seats"), resultSet.getDouble("trunkVolume"));
+                    case "Truck" -> {
+                        Truck t = new Truck(manufacturer, model, year, resultSet.getDouble("loadCapacity"));
+                        t.setCurrentLoad(resultSet.getDouble("currentLoad"));
+                        yield t;
+                    }
+                    case "Bike" -> new Bike(manufacturer, model, year, resultSet.getBoolean("helmetAvailable"));
+                    case "Bicycle" -> new Bicycle(manufacturer, model, year,
+                            resultSet.getString("bikeType"), resultSet.getInt("gears"));
                     default -> null;
                 };
 
                 if (v != null) {
                     v.setMileage(mileage);
-
-                    // Restore actual fuel values from DB
-                    if (v instanceof Car car) {
-                        car.setCurrentFuel(fuelCurrent);
-                        car.setFuelCapacity(fuelCapacity);
-                    } else if (v instanceof Truck truck) {
-                        truck.setCurrentFuel(fuelCurrent);
-                        truck.setFuelCapacity(fuelCapacity);
-                    } else if (v instanceof Bike bike) {
-                        bike.setCurrentFuel(fuelCurrent);
-                        bike.setFuelCapacity(fuelCapacity);
-                    }
-
+                    applyFuelData(v, fuelCurrent, fuelCapacity);
                     list.add(v);
                 }
             }
 
-            System.out.println("Loaded " + list.size() + " vehicles from MySQL.");
+            System.out.println("Loaded " + list.size() + " vehicles from database.");
+
         } catch (SQLException e) {
             System.out.println("Error loading vehicles: " + e.getMessage());
         }
