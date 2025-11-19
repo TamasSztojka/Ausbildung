@@ -1,15 +1,19 @@
 import java.time.LocalDate;
 
 public class Player extends Member{
+    private static int nextPlayerID = 1;
     private String position;
     private int number;
     private int goalsScored;
 
-    public Player(int memberID, String firstName, String lastName, LocalDate birthDate, String role, String position, int number, int goalsScored) {
-        super(memberID, firstName, lastName, birthDate, role);
+    public Player(String firstName, String lastName, LocalDate birthDate,
+                  String position, int number) {
+
+        super(nextPlayerID++, firstName, lastName, birthDate, "Player");
+
         this.position = position;
         this.number = number;
-        this.goalsScored = goalsScored;
+        this.goalsScored = 0;
     }
 
     public void updateGoals(int goals){
@@ -42,5 +46,14 @@ public class Player extends Member{
 
     public void setGoalsScored(int goalsScored) {
         this.goalsScored = goalsScored;
+    }
+
+    @Override
+    public String toString() {
+        return "Player ID: " + getMemberID() +
+                ", Name: " + getFullName() +
+                ", Position: " + position +
+                ", Number: " + number +
+                ", Goals: " + goalsScored;
     }
 }

@@ -1,21 +1,23 @@
 import java.time.LocalDate;
 
 public class Coach extends Member{
+    private static int nextCoachId = 1;
     private String licenseNumber;
-    private String experienceYears;
+    private int experienceYears;
 
-    public Coach(int memberID, String firstName, String lastName, LocalDate birthDate, String role, String licenseNumber, String experienceYears) {
-        super(memberID, firstName, lastName, birthDate, role);
+    public Coach(String firstName, String lastName, LocalDate birthDate,
+                 String licenseNumber, int experienceYears) {
+        super(nextCoachId++, firstName, lastName, birthDate, "Coach");
         this.licenseNumber = licenseNumber;
         this.experienceYears = experienceYears;
     }
 
     public void trainTeam(Team team){
-        System.out.println("Coach " + getFullName() + " is training team " + team.getName());
+        System.out.println("Coach " + getFullName() + " is scheduled to train team " + team.getName());
     }
 
-    public void evaluatePlayer(Team team) {
-        System.out.println("Coach " + getFullName() + " is evaluating player " + player.getFullName());
+    public void evaluatePlayer(Player player) {
+        System.out.println("Coach " + getFullName() + " is scheduled to evaluate player " + player.getFullName());
     }
 
     public String getLicenseNumber() {
@@ -26,12 +28,20 @@ public class Coach extends Member{
         this.licenseNumber = licenseNumber;
     }
 
-    public String getExperienceYears() {
+    public int getExperienceYears() {
         return experienceYears;
     }
 
-    public void setExperienceYears(String experienceYears) {
+    public void setExperienceYears(int experienceYears) {
         this.experienceYears = experienceYears;
+    }
+
+    @Override
+    public String toString() {
+        return "Coach ID: " + getMemberID() +
+                ", Name: " + getFullName() +
+                ", License: " + licenseNumber +
+                ", Experience: " + experienceYears + " years";
     }
 }
 

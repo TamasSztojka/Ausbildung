@@ -7,11 +7,14 @@ public class Team {
     private Coach coach;
     private List<Member> members;
 
-    public Team(int teamID, String name, Coach coach, List<Member> members) {
-        this.teamID = teamID;
+    private static int nextTeamID = 1;
+
+    public Team(String name) {
+        this.teamID = nextTeamID++;
         this.name = name;
         this.members = new ArrayList<>();
     }
+
     public void addMember(Member member) {
         members.add(member);
     }
@@ -59,5 +62,13 @@ public class Team {
 
     public void setMembers(List<Member> members) {
         this.members = members;
+    }
+
+    @Override
+    public String toString() {
+        return "Team ID: " + teamID +
+                ", Name: " + name +
+                ", Coach: " + (coach != null ? coach.getFullName() : "None") +
+                ", Members: " + members.size();
     }
 }

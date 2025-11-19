@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Member {
-    private int memberID;
+    protected int memberID;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
