@@ -50,7 +50,7 @@ public class Player extends Member{
 
     @Override
     public String toString() {
-        return "Player ID: " + getMemberID() +
+        return "Player → ID: " + getMemberID() +
                 ", Name: " + getFullName() +
                 ", Position: " + position +
                 ", Number: " + number +

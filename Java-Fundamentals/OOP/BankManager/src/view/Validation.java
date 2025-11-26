@@ -1,3 +1,5 @@
+package view;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
@@ -68,4 +70,18 @@ public class Validation {
             }
         }
     }
+
+    public static double readDouble(Scanner scanner, String message) {
+        System.out.print(message);
+
+        while (!scanner.hasNextDouble()) {
+            scanner.nextLine();
+            System.out.print("Invalid number. " + message);
+        }
+
+        double value = scanner.nextDouble();
+        scanner.nextLine();
+        return value;
+    }
 }
+

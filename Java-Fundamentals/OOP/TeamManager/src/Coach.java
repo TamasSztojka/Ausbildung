@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Coach extends Member{
+public class Coach extends Member {
     private static int nextCoachId = 1;
     private String licenseNumber;
     private int experienceYears;
@@ -38,7 +38,7 @@ public class Coach extends Member{
 
     @Override
     public String toString() {
-        return "Coach ID: " + getMemberID() +
+        return "Coach → ID: " + getMemberID() +
                 ", Name: " + getFullName() +
                 ", License: " + licenseNumber +
                 ", Experience: " + experienceYears + " years";

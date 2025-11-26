@@ -22,17 +22,12 @@ public class MenuManager {
 
     private static void createPlayer(Scanner scanner, Club club) {
 
-        System.out.print("Enter first name: ");
-        String firstName = scanner.nextLine();
-        System.out.print("Enter last name: ");
-        String lastName = scanner.nextLine();
-        System.out.print("Enter birth date (YYYY-MM-DD): ");
-        String dateInput = scanner.nextLine();
-        LocalDate birthDate = LocalDate.parse(dateInput);
-        System.out.print("Enter position: ");
-        String position = scanner.nextLine();
-        System.out.print("Enter shirt number: ");
-        int number = scanner.nextInt();
+        String firstName = Validation.readNonEmptyString(scanner, "Enter first name: ");
+        String lastName = Validation.readNonEmptyString(scanner, "Enter last name: ");
+        LocalDate birthDate = Validation.readDate(scanner, "Enter birth date: ");
+        String position = Validation.readNonEmptyString(scanner, "Enter position: ");
+
+        int number = Validation.readIntInRange(scanner, "Enter shirt number (1-99): ", 1, 99);
 
 
         Player player = new Player(firstName, lastName, birthDate, position, number);
@@ -43,53 +38,28 @@ public class MenuManager {
 
     private static void createCoach(Scanner scanner, Club club) {
 
-        System.out.print("Enter first name: ");
-        String firstName = scanner.nextLine();
-        System.out.print("Enter last name: ");
-        String lastName = scanner.nextLine();
-        System.out.print("Enter birth date (YYYY-MM-DD): ");
-        String dateInput = scanner.nextLine();
-        LocalDate birthDate = LocalDate.parse(dateInput);
-        System.out.print("Enter license number: ");
-        String license = scanner.nextLine();
-        System.out.print("Enter experience years: ");
-        int exp = scanner.nextInt();
+        String firstName = Validation.readNonEmptyString(scanner, "Enter first name: ");
+        String lastName = Validation.readNonEmptyString(scanner, "Enter last name: ");
+        LocalDate birthDate = Validation.readDate(scanner, "Enter birth date: (YYYY-MM-DD): ");
+        String license = Validation.readNonEmptyString(scanner, "Enter license number: ");
 
-        Coach coach = new Coach(firstName, lastName, birthDate, license, exp);
+        int experience = Validation.readPositiveInt(scanner, "Enter years of experiecen: ");
+
+
+
+        Coach coach = new Coach(firstName, lastName, birthDate, license, experience);
         club.addMember(coach);
 
         System.out.println("Coach created successfully! Assigned ID: " + coach.getMemberID());
     }
 
     public static void addTeam(Scanner scanner, Club club) {
-        scanner.nextLine();
 
-        System.out.print("Enter team name: ");
-        String name = scanner.nextLine();
+        String name = Validation.readNonEmptyString(scanner, "Enter team name: ");
         Team team = new Team(name);
         club.addTeam(team);
 
         System.out.println("Team created successfully! Assigned ID: " + team.getTeamID());
-    }
-
-    public static void showAllMembers(Club club) {
-        IO.println("\n=== All Members ===");
-
-        for (Member member : club.getMembers()) {
-            IO.println(
-                    member.getMemberID() + " - " + member.getFullName() + " (" + member.getRole() + ")"
-            );
-        }
-    }
-
-    public static void showAllTeams(Club club) {
-        IO.println("\n=== All Teams ===");
-
-        for (Team team : club.getTeams()) {
-            IO.println(
-                    team.getTeamID() + " - " + team.getName()
-            );
-        }
     }
 
     public static void manageMembersMenu(Scanner scanner, Club club) {
@@ -159,7 +129,7 @@ public class MenuManager {
         Player player = selectPlayer(scanner, club, "update goals for");
         if (player == null) return;
 
-        int goals = readInt(scanner, "Enter goals to add: ");
+        int goals = Validation.readPositiveInt(scanner, "Enter goals to add: ");
         player.updateGoals(goals);
 
         System.out.println("Goals updated!");
@@ -241,21 +211,21 @@ public class MenuManager {
 
     private static Player selectPlayer(Scanner scanner, Club club, String action) {
         printPlayers(club);
-        int id = readInt(scanner, "Enter player ID to " + action + ": ");
-        Member m = findMemberById(club, id);
-        return (m instanceof Player) ? (Player)m : null;
+        int id = Validation.readPositiveInt(scanner, "Enter player ID to " + action + ": ");
+        Member member = findMemberById(club, id);
+        return (member instanceof Player) ? (Player) member : null;
     }
 
     private static Coach selectCoach(Scanner scanner, Club club, String action) {
         printCoaches(club);
-        int id = readInt(scanner, "Enter coach ID to " + action + ": ");
-        Member m = findMemberById(club, id);
-        return (m instanceof Coach) ? (Coach)m : null;
+        int id = Validation.readPositiveInt(scanner, "Enter coach ID to " + action + ": ");
+        Member member = findMemberById(club, id);
+        return (member instanceof Coach) ? (Coach)member : null;
     }
 
     private static Team selectTeam(Scanner scanner, Club club, String action) {
         printTeams(club);
-        int id = readInt(scanner, "Enter team ID to " + action + ": ");
+        int id = Validation.readPositiveInt(scanner, "Enter team ID to " + action + ": ");
         return findTeamById(club, id);
     }
 
@@ -292,15 +262,14 @@ public class MenuManager {
                 .orElse(null);
     }
 
-    private static int readInt(Scanner scanner, String message) {
-        System.out.print(message);
-        while (!scanner.hasNextInt()) {
-            scanner.nextLine();
-            System.out.print("Invalid input. " + message);
-        }
-        int value = scanner.nextInt();
-        scanner.nextLine();
-        return value;
+    public static void showAllMembers(Club club) {
+        club.getMembers().forEach(System.out::println);
     }
+
+    public static void showAllTeams(Club club){
+        club.getTeams().forEach(System.out::println);
+    }
+
+
 }
 

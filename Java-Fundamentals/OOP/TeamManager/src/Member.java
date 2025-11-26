@@ -6,14 +6,15 @@ public class Member {
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
-    private String role;
+    private String type;
 
-    public Member(int memberID, String firstName, String lastName, LocalDate birthDate, String role) {
-        this.memberID = memberID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.role = role;
+    public Member(int id, String first, String last,
+                  LocalDate birth, String type) {
+        this.memberID = id;
+        this.firstName = first;
+        this.lastName = last;
+        this.birthDate = birth;
+        this.type = type;
     }
 
     public String getFullName() {
@@ -27,7 +28,7 @@ public class Member {
     public void printMemberInfo() {
         System.out.println("MemberID: " + memberID);
         System.out.println("Name: " + getFullName());
-        System.out.println("Role: " + role);
+        System.out.println("Type: " + type);
         System.out.println("Age: " + getAge());
     }
 
@@ -63,11 +64,11 @@ public class Member {
         this.birthDate = birthDate;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
+    @Override
+    public String toString() {
+        return "ID: " + memberID +
+                ", Name: " + getFullName() +
+                ", Birthdate: " + birthDate +
+                ", Type: " + type;
     }
 }

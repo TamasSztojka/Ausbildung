@@ -1,0 +1,19 @@
+{
+  "accounts": [
+    {
+      "accountNumber": 1001,
+      "owner": "Tomi",
+      "balance": 0.0
+    },
+    {
+      "accountNumber": 1002,
+      "owner": "Harry",
+      "balance": 0.0
+    },
+    {
+      "accountNumber": 1003,
+      "owner": "Potter",
+      "balance": 0.0
+    }
+  ]
+}

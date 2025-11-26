@@ -1,0 +1,32 @@
+{
+  "name": "Elite Sports Club",
+  "address": "123 Main Street",
+  "members": [
+    {
+      "licenseNumber": "UEFA-A-2024-001",
+      "experienceYears": 15,
+      "memberID": 1,
+      "firstName": "Markus",
+      "lastName": "Schneider",
+      "birthDate": "1980-04-12",
+      "type": "Coach"
+    },
+    {
+      "position": "Goalkeeper",
+      "number": 1,
+      "goalsScored": 0,
+      "memberID": 1,
+      "firstName": "Lukas",
+      "lastName": "Berger",
+      "birthDate": "1998-05-21",
+      "type": "Player"
+    }
+  ],
+  "teams": [
+    {
+      "teamID": 1,
+      "name": "PRO Team",
+      "members": []
+    }
+  ]
+}

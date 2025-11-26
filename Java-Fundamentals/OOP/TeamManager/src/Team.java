@@ -66,7 +66,7 @@ public class Team {
 
     @Override
     public String toString() {
-        return "Team ID: " + teamID +
+        return "Team → ID: " + teamID +
                 ", Name: " + name +
                 ", Coach: " + (coach != null ? coach.getFullName() : "None") +
                 ", Members: " + members.size();
