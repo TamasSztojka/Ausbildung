@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ValidationLibrary">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ValidationLibrary/out/artifacts/ValidationLibrary_jar/ValidationLibrary.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
