@@ -1,0 +1,17 @@
+{
+  "albums": [
+    {
+      "albumID": 1,
+      "title": "Hello There",
+      "artist": "Obi-Wan",
+      "tracks": [
+        {
+          "trackID": 1,
+          "title": "Not the youngling!?",
+          "fileName": "NotTheYounglings.mp3",
+          "lengthSec": 249
+        }
+      ]
+    }
+  ]
+}

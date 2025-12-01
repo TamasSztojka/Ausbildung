@@ -5,16 +5,22 @@ import java.util.List;
 
 public class Album {
 
+    private static int nextID = 1;
+
     private int albumID;
     private String title;
     private String artist;
 
     private List<Track> tracks = new ArrayList<>();
 
-    public Album(int albumID, String title, String artist) {
-        this.albumID = albumID;
+    public Album(String title, String artist) {
+        this.albumID = nextID++;
         this.title = title;
         this.artist = artist;
+    }
+
+    public static void setNextID(int id) {
+        nextID = id;
     }
 
     public int getAlbumID() {

@@ -1,13 +1,15 @@
 package model;
 public class Track {
 
+    private static int nextID = 1;
+
     private int trackID;
     private String title;
     private String fileName;
-    private int lengthSec; // Länge in Sekunden
+    private int lengthSec;
 
-    public Track(int trackID, String title, String fileName, int lengthSec) {
-        this.trackID = trackID;
+    public Track(String title, String fileName, int lengthSec) {
+        this.trackID = nextID++;
         this.title = title;
         this.fileName = fileName;
         this.lengthSec = lengthSec;
@@ -39,6 +41,10 @@ public class Track {
 
     public int getLengthSec() {
         return lengthSec;
+    }
+
+    public static void setNextID(int id) {
+        nextID = id;
     }
 
     public void setLengthSec(int lengthSec) {

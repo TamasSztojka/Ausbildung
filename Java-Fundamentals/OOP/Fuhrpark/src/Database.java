@@ -33,9 +33,21 @@ public class Database {
             );
         """;
 
-        try (Connection conn = connect(); Statement statement = conn.createStatement()) {
-            statement.execute(sql);
-            System.out.println("MySQL table ready!");
+        String sqlEmployee = """
+                CREATE TABLE IF NOT EXISTS employee (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                firstName VARCHAR(100) NOT NULL,
+                lastName VARCHAR(100) NOT NULL,
+                branch VARCHAR(100),
+                position VARCHAR(100),
+                email VARCHAR(150)
+            );
+        """;
+
+        try (Connection conn = connect(); Statement stmt = conn.createStatement()) {
+            stmt.execute(sql);
+            stmt.execute(sqlEmployee);
+            System.out.println("MySQL tables ready!");
         } catch (SQLException e) {
             System.out.println("Database initialization failed: " + e.getMessage());
         }
@@ -58,7 +70,6 @@ public class Database {
         return new double[]{currentFuel, fuelCapacity};
     }
 
-    // Get subclass-specific values (like seats, gears, etc.)
     private static Object[] getSpecificData(Vehicles vehicle) {
         int seats = 0;
         int gears = 0;
@@ -211,6 +222,45 @@ public class Database {
 
         } catch (SQLException e) {
             System.out.println("Error loading vehicles: " + e.getMessage());
+        }
+
+        return list;
+    }
+
+    // Save employee
+    public static void saveMitarbeiter(Employee employee) {
+        String sql = "INSERT INTO employee (firstName, lastName, branch, position, email) VALUES (?, ?, ?, ?, ?)";
+        try (Connection conn = connect(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, employee.getFirstName());
+            ps.setString(2, employee.getLastName());
+            ps.setString(3, employee.getBranch());
+            ps.setString(4, employee.getPosition());
+            ps.setString(5, employee.getEmail());
+            ps.executeUpdate();
+            System.out.println("Saved Employee: " + employee.getFullName());
+        } catch (SQLException e) {
+            System.out.println("Error saving Employee: " + e.getMessage());
+        }
+    }
+
+    public static ArrayList<Employee> loadEmployees() {
+        ArrayList<Employee> list = new ArrayList<>();
+        String sql = "SELECT * FROM Employee";
+
+        try (Connection conn = connect(); Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(sql)) {
+            while (rs.next()) {
+                Employee employee = new Employee(
+                        rs.getInt("id"),
+                        rs.getString("firstName"),
+                        rs.getString("lastName"),
+                        rs.getString("branch"),
+                        rs.getString("position"),
+                        rs.getString("email")
+                );
+                list.add(employee);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error loading Mitarbeiter: " + e.getMessage());
         }
 
         return list;
