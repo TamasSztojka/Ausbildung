@@ -1,0 +1,7 @@
+C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\LE_02-03_UserManager.exe.config
+C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\LE_02-03_UserManager.exe
+C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\LE_02-03_UserManager.pdb
+C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.csproj.AssemblyReference.cache
+C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.csproj.CoreCompileInputs.cache
+C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.exe
+C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.pdb
