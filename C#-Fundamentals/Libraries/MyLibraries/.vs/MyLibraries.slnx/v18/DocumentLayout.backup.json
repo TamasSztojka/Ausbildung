@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Export\\Ausbildung\\C#-Fundamentals\\Libraries\\MyLibraries\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{21911F1B-F71A-4BB0-BADE-20041B1EE583}|MyLibraries\\MyLibraries.csproj|c:\\export\\ausbildung\\c#-fundamentals\\libraries\\mylibraries\\mylibraries\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21911F1B-F71A-4BB0-BADE-20041B1EE583}|MyLibraries\\MyLibraries.csproj|solutionrelative:mylibraries\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Export\\Ausbildung\\C#-Fundamentals\\Libraries\\MyLibraries\\MyLibraries\\Class1.cs",
+              "RelativeDocumentMoniker": "MyLibraries\\Class1.cs",
+              "ToolTip": "C:\\Export\\Ausbildung\\C#-Fundamentals\\Libraries\\MyLibraries\\MyLibraries\\Class1.cs",
+              "RelativeToolTip": "MyLibraries\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:12:41.946Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

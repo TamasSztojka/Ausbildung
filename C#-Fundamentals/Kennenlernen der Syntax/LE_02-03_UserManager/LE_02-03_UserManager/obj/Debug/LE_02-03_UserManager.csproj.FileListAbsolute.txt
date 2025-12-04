@@ -5,3 +5,29 @@ C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManage
 C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.csproj.CoreCompileInputs.cache
 C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.exe
 C:\Export\Ausbildung\C# Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.pdb
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\LE_02-03_UserManager.exe.config
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\LE_02-03_UserManager.exe
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\LE_02-03_UserManager.pdb
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Buffers.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.IO.Pipelines.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Memory.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Numerics.Vectors.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Text.Encodings.Web.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Text.Json.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Buffers.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.IO.Pipelines.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Memory.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Numerics.Vectors.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Text.Encodings.Web.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Text.Json.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.csproj.AssemblyReference.cache
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.csproj.CoreCompileInputs.cache
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03.1CA39ECD.Up2Date
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.exe
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-03_UserManager\LE_02-03_UserManager\obj\Debug\LE_02-03_UserManager.pdb

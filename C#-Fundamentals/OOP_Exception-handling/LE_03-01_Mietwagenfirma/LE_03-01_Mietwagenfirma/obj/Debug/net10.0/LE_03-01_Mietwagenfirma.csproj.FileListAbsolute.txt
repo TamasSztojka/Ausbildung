@@ -1,0 +1,15 @@
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\bin\Debug\net10.0\LE_03-01_Mietwagenfirma.exe
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\bin\Debug\net10.0\LE_03-01_Mietwagenfirma.deps.json
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\bin\Debug\net10.0\LE_03-01_Mietwagenfirma.runtimeconfig.json
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\bin\Debug\net10.0\LE_03-01_Mietwagenfirma.dll
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\bin\Debug\net10.0\LE_03-01_Mietwagenfirma.pdb
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.GeneratedMSBuildEditorConfig.editorconfig
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.AssemblyInfoInputs.cache
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.AssemblyInfo.cs
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.csproj.CoreCompileInputs.cache
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.sourcelink.json
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.dll
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\refint\LE_03-01_Mietwagenfirma.dll
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.pdb
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.genruntimeconfig.cache
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\ref\LE_03-01_Mietwagenfirma.dll

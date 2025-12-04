@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace LE_02_03_Benutzer_Anlegen
 {
@@ -15,6 +14,8 @@ namespace LE_02_03_Benutzer_Anlegen
 
             bool quit = false;
 
+            LoadUsersFromJson();
+
             while (!quit)
             {
                 Console.WriteLine("=== User Management Menu ===");
@@ -24,6 +25,8 @@ namespace LE_02_03_Benutzer_Anlegen
                 Console.WriteLine("4. Exit Program");
 
                 int choice = Convert.ToInt32(Console.ReadLine());
+
+                Console.Clear();
 
                 switch (choice)
                 {
@@ -48,6 +51,12 @@ namespace LE_02_03_Benutzer_Anlegen
         }
         static void CreateUser()
         {
+            if (users.Count >= 10)
+            {
+                Console.WriteLine("The maximum amount of users is 10!");
+                return;
+            }
+
             string firstName = UsernameValidation("Please enter the first name:");
             string lastName = UsernameValidation("Please enter the last name:");
             int age = AgeValidation("Please enter the users age:");
@@ -62,6 +71,8 @@ namespace LE_02_03_Benutzer_Anlegen
             });
 
             Console.WriteLine("User created successfully");
+
+            SaveUsersToJson();
         }
 
         static void FilterUser()
@@ -69,7 +80,7 @@ namespace LE_02_03_Benutzer_Anlegen
             int targetAge = AgeValidation("Enter age to filter:");
 
             var filtered = users
-                .Where(u => int.Parse(u["Age"]) == targetAge)
+                .Where(user => int.Parse(user["Age"]) == targetAge)
                 .ToList();
 
             if (filtered.Count == 0)
@@ -140,5 +151,24 @@ namespace LE_02_03_Benutzer_Anlegen
                 Console.WriteLine("Phone number must be 7-15 digits.");
             }
         }
+
+        static void SaveUsersToJson()
+        {
+            string json = JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText("users.json", json);
+        }
+
+        static void LoadUsersFromJson()
+        {
+            if (!File.Exists("users.json"))
+            {
+                users = new List<Dictionary<string, string>>();
+                return;
+            }
+
+            string json = File.ReadAllText("users.json");
+            users = JsonSerializer.Deserialize<List<Dictionary<string, string>>>(json);
+        }
     }
 }
+ 

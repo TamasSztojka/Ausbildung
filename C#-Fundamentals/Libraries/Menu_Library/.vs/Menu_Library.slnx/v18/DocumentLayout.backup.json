@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Export\\Ausbildung\\C#-Fundamentals\\Libraries\\Menu_Library\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2F7F8B63-A082-A4C4-E86C-613FE7BF1195}|Menu_Library\\Menu_Library.csproj|c:\\export\\ausbildung\\c#-fundamentals\\libraries\\menu_library\\menu_library\\tools\\menulibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F7F8B63-A082-A4C4-E86C-613FE7BF1195}|Menu_Library\\Menu_Library.csproj|solutionrelative:menu_library\\tools\\menulibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuLibrary.cs",
+              "DocumentMoniker": "C:\\Export\\Ausbildung\\C#-Fundamentals\\Libraries\\Menu_Library\\Menu_Library\\tools\\MenuLibrary.cs",
+              "RelativeDocumentMoniker": "Menu_Library\\tools\\MenuLibrary.cs",
+              "ToolTip": "C:\\Export\\Ausbildung\\C#-Fundamentals\\Libraries\\Menu_Library\\Menu_Library\\tools\\MenuLibrary.cs",
+              "RelativeToolTip": "Menu_Library\\tools\\MenuLibrary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T14:32:32.427Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

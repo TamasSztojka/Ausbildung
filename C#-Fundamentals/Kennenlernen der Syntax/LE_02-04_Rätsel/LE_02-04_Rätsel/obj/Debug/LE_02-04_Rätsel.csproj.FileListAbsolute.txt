@@ -1,0 +1,52 @@
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\obj\Debug\LE_02-04_Rätsel.csproj.AssemblyReference.cache
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\obj\Debug\LE_02-04_Rätsel.csproj.CoreCompileInputs.cache
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\LE_02-04_Rätsel.exe.config
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\LE_02-04_Rätsel.exe
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\LE_02-04_Rätsel.pdb
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\obj\Debug\LE_02-04_Rätsel.exe
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\obj\Debug\LE_02-04_Rätsel.pdb
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Buffers.dll
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.IO.Pipelines.dll
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Memory.dll
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Numerics.Vectors.dll
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Text.Encodings.Web.dll
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Text.Json.dll
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Buffers.xml
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.IO.Pipelines.xml
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Memory.xml
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Numerics.Vectors.xml
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Text.Encodings.Web.xml
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Text.Json.xml
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Export\Ausbildung\C#-Fundamentals\LE_02-04_Rätsel\LE_02-04_Rätsel\obj\Debug\LE_02-04.9AAF020E.Up2Date
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\LE_02-04_Rätsel.exe.config
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\LE_02-04_Rätsel.exe
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\LE_02-04_Rätsel.pdb
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Buffers.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.IO.Pipelines.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Memory.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Numerics.Vectors.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Text.Encodings.Web.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Text.Json.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Buffers.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.IO.Pipelines.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Memory.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Numerics.Vectors.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Text.Encodings.Web.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Text.Json.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\obj\Debug\LE_02-04_Rätsel.csproj.AssemblyReference.cache
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\obj\Debug\LE_02-04_Rätsel.csproj.CoreCompileInputs.cache
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\obj\Debug\LE_02-04.9AAF020E.Up2Date
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\obj\Debug\LE_02-04_Rätsel.exe
+C:\Export\Ausbildung\C#-Fundamentals\Kennenlernen der Syntax\LE_02-04_Rätsel\LE_02-04_Rätsel\obj\Debug\LE_02-04_Rätsel.pdb

@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Export\\Ausbildung\\C# Fundamentals\\Kennenlernen der Syntax\\LE_02-03_UserManager\\",
+  "WorkspaceRootPath": "C:\\Export\\Ausbildung\\C#-Fundamentals\\Kennenlernen der Syntax\\LE_02-03_UserManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C9D404A-D2C0-456D-A895-CB1E5620E291}|LE_02-03_UserManager\\LE_02-03_UserManager.csproj|c:\\export\\ausbildung\\c# fundamentals\\kennenlernen der syntax\\le_02-03_usermanager\\le_02-03_usermanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C9D404A-D2C0-456D-A895-CB1E5620E291}|LE_02-03_UserManager\\LE_02-03_UserManager.csproj|c:\\export\\ausbildung\\c#-fundamentals\\kennenlernen der syntax\\le_02-03_usermanager\\le_02-03_usermanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3C9D404A-D2C0-456D-A895-CB1E5620E291}|LE_02-03_UserManager\\LE_02-03_UserManager.csproj|solutionrelative:le_02-03_usermanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Export\\Ausbildung\\C# Fundamentals\\Kennenlernen der Syntax\\LE_02-03_UserManager\\LE_02-03_UserManager\\Program.cs",
+              "DocumentMoniker": "C:\\Export\\Ausbildung\\C#-Fundamentals\\Kennenlernen der Syntax\\LE_02-03_UserManager\\LE_02-03_UserManager\\Program.cs",
               "RelativeDocumentMoniker": "LE_02-03_UserManager\\Program.cs",
-              "ToolTip": "C:\\Export\\Ausbildung\\C# Fundamentals\\Kennenlernen der Syntax\\LE_02-03_UserManager\\LE_02-03_UserManager\\Program.cs",
+              "ToolTip": "C:\\Export\\Ausbildung\\C#-Fundamentals\\Kennenlernen der Syntax\\LE_02-03_UserManager\\LE_02-03_UserManager\\Program.cs",
               "RelativeToolTip": "LE_02-03_UserManager\\Program.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T13:23:28.234Z",
               "EditorCaption": ""
