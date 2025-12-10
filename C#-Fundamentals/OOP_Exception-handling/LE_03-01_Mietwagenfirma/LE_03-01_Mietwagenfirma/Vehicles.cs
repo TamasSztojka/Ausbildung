@@ -6,15 +6,10 @@ namespace LE_03_01_Mietwagenfirma
 {
     public abstract class Vehicles
     {
-        private string manufacturer;
-        private string model;
-        private int year;
-        private string licensePlate;
-
-        public string Manufacturer => manufacturer;
-        public string Model => model;
-        public int Year => year;
-        public string LicensePlate => licensePlate;
+        public string manufacturer { get; private set; }
+        public string model {  get; private set; }
+        public int year { get; private set;  }
+        public string licensePlate { get; private set; }
 
         public Vehicles(string manufacturer, string model, int year, string licensePlate)
         {

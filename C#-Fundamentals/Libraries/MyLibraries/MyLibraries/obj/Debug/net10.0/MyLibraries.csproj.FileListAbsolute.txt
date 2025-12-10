@@ -1,0 +1,12 @@
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\bin\Debug\net10.0\MyLibraries.deps.json
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\bin\Debug\net10.0\MyLibraries.dll
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\bin\Debug\net10.0\MyLibraries.pdb
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\obj\Debug\net10.0\MyLibraries.GeneratedMSBuildEditorConfig.editorconfig
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\obj\Debug\net10.0\MyLibraries.AssemblyInfoInputs.cache
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\obj\Debug\net10.0\MyLibraries.AssemblyInfo.cs
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\obj\Debug\net10.0\MyLibraries.csproj.CoreCompileInputs.cache
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\obj\Debug\net10.0\MyLibraries.sourcelink.json
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\obj\Debug\net10.0\MyLibraries.dll
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\obj\Debug\net10.0\refint\MyLibraries.dll
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\obj\Debug\net10.0\MyLibraries.pdb
+C:\Export\Ausbildung\C#-Fundamentals\Libraries\MyLibraries\MyLibraries\obj\Debug\net10.0\ref\MyLibraries.dll

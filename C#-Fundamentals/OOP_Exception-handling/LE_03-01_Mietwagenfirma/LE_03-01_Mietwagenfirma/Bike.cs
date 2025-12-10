@@ -4,13 +4,11 @@ using System.Text;
 
 namespace LE_03_01_Mietwagenfirma
 {
-    internal class Bike : Vehicles
+    internal class Bike : Vehicles, ILoanCalculate
     {
-        private int displacement;
-        private string type;
+        public int displacement { get; private set;  }
+        public string type { get; private set; }
 
-        public int Displacement => displacement;
-        public string Type => type;
 
         public Bike(string manufacturer, string model, int year, string licensePlate,
                     int displacement, string type)
@@ -22,8 +20,13 @@ namespace LE_03_01_Mietwagenfirma
 
         public override void showDetails()
         {
-            Console.WriteLine($"Car info: {Manufacturer} {Model}, Year {Year}, License Plate: {LicensePlate}");
-            Console.WriteLine($"Displacement: {displacement}, Type: {Type}");
+            Console.WriteLine($"Car info: {manufacturer} {model}, Year {year}, License Plate: {licensePlate}");
+            Console.WriteLine($"Displacement: {displacement}, Type: {type}");
+        }
+
+        public decimal calculateLoanPrice(int days)
+        {
+            return days * 30m;
         }
     }
 }

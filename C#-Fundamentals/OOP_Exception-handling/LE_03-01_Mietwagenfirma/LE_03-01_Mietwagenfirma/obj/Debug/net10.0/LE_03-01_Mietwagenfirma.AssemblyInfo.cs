@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LE_03-01_Mietwagenfirma")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da61c79da96ec0797e79ce3a8a652fb8ab873719")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46ed9c8f6ac042e27a0b5fe3479bd7985b763630")]
 [assembly: System.Reflection.AssemblyProductAttribute("LE_03-01_Mietwagenfirma")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LE_03-01_Mietwagenfirma")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

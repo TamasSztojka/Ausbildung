@@ -5,15 +5,11 @@ using System.Text;
 
 namespace LE_03_01_Mietwagenfirma
 {
-    public class Car : Vehicles
+    public class Car : Vehicles, ILoanCalculate
     {
-        private int tankContents;
-        private int doors;
-        private string typeDescription;
-
-        public int TankContents => tankContents;
-        public int Doors => doors;
-        public string TypeDescription => typeDescription;
+        public int tankContents { get; private set; }
+        public int doors { get; private set; }
+        public string typeDescription {  get; private set; }
 
         public Car(string manufacturer, string model, int year, string licensePlate,
                     int tankContents, int doors, string type)
@@ -27,8 +23,13 @@ namespace LE_03_01_Mietwagenfirma
 
         public override void showDetails()
         {
-            Console.WriteLine($"Car info: {Manufacturer} {Model}, Year {Year}, License Plate: {LicensePlate}");
-            Console.WriteLine($"Tank: {TankContents}, Doors: {Doors}, Type: {TypeDescription}");
+            Console.WriteLine($"Car info: {manufacturer} {model}, Year {year}, License Plate: {licensePlate}");
+            Console.WriteLine($"Tank: {tankContents}, Doors: {doors}, Type: {typeDescription}");
+        }
+
+        public decimal calculateLoanPrice(int days)
+        {
+            return days * 50m;
         }
     }
 }

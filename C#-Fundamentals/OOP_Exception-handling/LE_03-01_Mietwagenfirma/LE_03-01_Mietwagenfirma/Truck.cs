@@ -5,11 +5,11 @@ using System.Text;
 
 namespace LE_03_01_Mietwagenfirma
 {
-    public class Truck : Vehicles
+    public class Truck : Vehicles, ILoanCalculate
     {
-        private int payload;
-        private string construction;
-        private int axleNumber;
+        public int payload { get; private set; }
+        public string construction { get; private set; }
+        public int axleNumber {  get; private set; }
 
         public Truck(string manufacturer, string model, int year, string licensePlate,
                     int payload, string construction, int axleNumber)
@@ -22,8 +22,13 @@ namespace LE_03_01_Mietwagenfirma
 
         public override void showDetails()
         {
-            Console.WriteLine($"Car info: {Manufacturer} {Model}, Year {Year}, License Plate: {LicensePlate}");
+            Console.WriteLine($"Car info: {manufacturer} {model}, Year {year}, License Plate: {licensePlate}");
             Console.WriteLine($"Tank: {payload}, Doors: {construction}, Type: {axleNumber}");
+        }
+
+        public decimal calculateLoanPrice(int days)
+        {
+            return days * 120m;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -151,14 +152,18 @@ namespace LE_02_04_Rätsel
 
         static double ValidateNumber(string message)
         {
+            double guess; 
             while (true)
             {
                 Console.WriteLine(message);
                 string input = Console.ReadLine().Trim();
 
-                double guess = double.Parse(input);
+                input = input.Replace(".", ",");
 
-                    return guess;
+                bool hasWorked = double.TryParse(input, NumberStyles.Any, new CultureInfo("de-DE"), out guess);
+                  
+
+                return guess;
             }
         }
     }

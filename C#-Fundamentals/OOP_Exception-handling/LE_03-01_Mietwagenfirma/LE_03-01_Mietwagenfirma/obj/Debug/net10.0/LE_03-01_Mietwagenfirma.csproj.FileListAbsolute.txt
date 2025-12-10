@@ -13,3 +13,7 @@ C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfi
 C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.pdb
 C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.genruntimeconfig.cache
 C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\ref\LE_03-01_Mietwagenfirma.dll
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01_Mietwagenfirma.csproj.AssemblyReference.cache
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\bin\Debug\net10.0\MyLibraries.dll
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\bin\Debug\net10.0\MyLibraries.pdb
+C:\Export\Ausbildung\C#-Fundamentals\OOP_Exception-handling\LE_03-01_Mietwagenfirma\LE_03-01_Mietwagenfirma\obj\Debug\net10.0\LE_03-01.8CBE8D48.Up2Date

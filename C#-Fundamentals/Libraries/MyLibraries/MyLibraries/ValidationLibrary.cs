@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ValidationLibrary
+namespace Validation_Library
 {
-    internal class ValidationLibrary
+    public static class Validation
     {
         public static int readInt(string message)
         {
