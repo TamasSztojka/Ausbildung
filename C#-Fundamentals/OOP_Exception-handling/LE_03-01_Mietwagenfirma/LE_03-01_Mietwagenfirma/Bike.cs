@@ -6,22 +6,22 @@ namespace LE_03_01_Mietwagenfirma
 {
     internal class Bike : Vehicles, ILoanCalculate
     {
-        public int displacement { get; private set;  }
-        public string type { get; private set; }
+        public int Displacement { get; private set;  }
+        public string Type { get; private set; }
 
 
         public Bike(string manufacturer, string model, int year, string licensePlate,
                     int displacement, string type)
             : base(manufacturer, model, year, licensePlate)
         {
-            this.displacement = displacement;
-            this.type = type;
+            this.Displacement = displacement;
+            this.Type = type;
         }
 
         public override void showDetails()
         {
-            Console.WriteLine($"Car info: {manufacturer} {model}, Year {year}, License Plate: {licensePlate}");
-            Console.WriteLine($"Displacement: {displacement}, Type: {type}");
+            Console.WriteLine($"Car info: {Manufacturer} {Model}, Year {Year}, License Plate: {LicensePlate}");
+            Console.WriteLine($"Displacement: {Displacement}, Type: {Type}");
         }
 
         public decimal calculateLoanPrice(int days)
