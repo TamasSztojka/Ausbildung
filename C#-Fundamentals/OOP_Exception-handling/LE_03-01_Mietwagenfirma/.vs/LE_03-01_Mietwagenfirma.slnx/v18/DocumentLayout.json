@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Export\\Ausbildung\\C#-Fundamentals\\OOP_Exception-handling\\LE_03-01_Mietwagenfirma\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|c:\\export\\ausbildung\\c#-fundamentals\\oop_exception-handling\\le_03-01_mietwagenfirma\\le_03-01_mietwagenfirma\\iloancalculate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|solutionrelative:le_03-01_mietwagenfirma\\iloancalculate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|c:\\export\\ausbildung\\c#-fundamentals\\oop_exception-handling\\le_03-01_mietwagenfirma\\le_03-01_mietwagenfirma\\bike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|solutionrelative:le_03-01_mietwagenfirma\\bike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|c:\\export\\ausbildung\\c#-fundamentals\\oop_exception-handling\\le_03-01_mietwagenfirma\\le_03-01_mietwagenfirma\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|solutionrelative:le_03-01_mietwagenfirma\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|c:\\export\\ausbildung\\c#-fundamentals\\oop_exception-handling\\le_03-01_mietwagenfirma\\le_03-01_mietwagenfirma\\iloancalculate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|solutionrelative:le_03-01_mietwagenfirma\\iloancalculate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|c:\\export\\ausbildung\\c#-fundamentals\\oop_exception-handling\\le_03-01_mietwagenfirma\\le_03-01_mietwagenfirma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|solutionrelative:le_03-01_mietwagenfirma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|c:\\export\\ausbildung\\c#-fundamentals\\oop_exception-handling\\le_03-01_mietwagenfirma\\le_03-01_mietwagenfirma\\vehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +27,8 @@
       "RelativeMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|solutionrelative:le_03-01_mietwagenfirma\\truck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|c:\\export\\ausbildung\\c#-fundamentals\\oop_exception-handling\\le_03-01_mietwagenfirma\\le_03-01_mietwagenfirma\\bike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|solutionrelative:le_03-01_mietwagenfirma\\bike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|c:\\export\\ausbildung\\c#-fundamentals\\oop_exception-handling\\le_03-01_mietwagenfirma\\le_03-01_mietwagenfirma\\vehiclesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|solutionrelative:le_03-01_mietwagenfirma\\vehiclesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|c:\\export\\ausbildung\\c#-fundamentals\\oop_exception-handling\\le_03-01_mietwagenfirma\\le_03-01_mietwagenfirma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55A9B3AB-9A25-231D-5D4D-A94747EC6E74}|LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma.csproj|solutionrelative:le_03-01_mietwagenfirma\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,24 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Export\\Ausbildung\\C#-Fundamentals\\OOP_Exception-handling\\LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma\\Program.cs",
               "RelativeDocumentMoniker": "LE_03-01_Mietwagenfirma\\Program.cs",
               "ToolTip": "C:\\Export\\Ausbildung\\C#-Fundamentals\\OOP_Exception-handling\\LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma\\Program.cs",
               "RelativeToolTip": "LE_03-01_Mietwagenfirma\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACUAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-03T09:30:22.581Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "VehiclesManager.cs",
               "DocumentMoniker": "C:\\Export\\Ausbildung\\C#-Fundamentals\\OOP_Exception-handling\\LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma\\VehiclesManager.cs",
               "RelativeDocumentMoniker": "LE_03-01_Mietwagenfirma\\VehiclesManager.cs",
@@ -63,12 +63,11 @@
               "RelativeToolTip": "LE_03-01_Mietwagenfirma\\VehiclesManager.cs",
               "ViewState": "AgIAAHgAAAAAAAAAAAAAAIgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T08:53:33.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-09T08:53:33.048Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Vehicles.cs",
               "DocumentMoniker": "C:\\Export\\Ausbildung\\C#-Fundamentals\\OOP_Exception-handling\\LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma\\Vehicles.cs",
               "RelativeDocumentMoniker": "LE_03-01_Mietwagenfirma\\Vehicles.cs",
@@ -76,12 +75,11 @@
               "RelativeToolTip": "LE_03-01_Mietwagenfirma\\Vehicles.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T09:33:15.68Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T09:33:15.68Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Truck.cs",
               "DocumentMoniker": "C:\\Export\\Ausbildung\\C#-Fundamentals\\OOP_Exception-handling\\LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma\\Truck.cs",
               "RelativeDocumentMoniker": "LE_03-01_Mietwagenfirma\\Truck.cs",
@@ -89,12 +87,11 @@
               "RelativeToolTip": "LE_03-01_Mietwagenfirma\\Truck.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAABkAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T09:34:59.697Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T09:34:59.697Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Bike.cs",
               "DocumentMoniker": "C:\\Export\\Ausbildung\\C#-Fundamentals\\OOP_Exception-handling\\LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma\\Bike.cs",
               "RelativeDocumentMoniker": "LE_03-01_Mietwagenfirma\\Bike.cs",
@@ -120,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ILoanCalculate.cs",
               "DocumentMoniker": "C:\\Export\\Ausbildung\\C#-Fundamentals\\OOP_Exception-handling\\LE_03-01_Mietwagenfirma\\LE_03-01_Mietwagenfirma\\ILoanCalculate.cs",
               "RelativeDocumentMoniker": "LE_03-01_Mietwagenfirma\\ILoanCalculate.cs",

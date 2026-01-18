@@ -1,0 +1,25 @@
+﻿<Window x:Class="Notizen_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Notes" Height="350" Width="500">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Input -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBox x:Name="NoteTextBox" Width="320" Margin="0,0,10,0"/>
+            <Button Content="Add" Width="120" Click="Add_Click"/>
+        </StackPanel>
+
+        <ListBox x:Name="NotesListBox" Grid.Row="1"/>
+
+        <Button Grid.Row="2" Content="Delete Selected"
+                Margin="0,10,0,0"
+                Height="30"
+                Click="Delete_Click"/>
+    </Grid>
+</Window>
