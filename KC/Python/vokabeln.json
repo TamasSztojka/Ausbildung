@@ -1,0 +1,1002 @@
+[
+  {
+    "id": 1,
+    "english": "house",
+    "german": "Haus",
+    "wrong_answers": [
+      "car",
+      "tree",
+      "book"
+    ]
+  },
+  {
+    "id": 2,
+    "english": "dog",
+    "german": "Hund",
+    "wrong_answers": [
+      "cat",
+      "bird",
+      "fish"
+    ]
+  },
+  {
+    "id": 3,
+    "english": "sun",
+    "german": "Sonne",
+    "wrong_answers": [
+      "moon",
+      "star",
+      "cloud"
+    ]
+  },
+  {
+    "id": 4,
+    "english": "tree",
+    "german": "Baum",
+    "wrong_answers": [
+      "flower",
+      "river",
+      "stone"
+    ]
+  },
+  {
+    "id": 5,
+    "english": "car",
+    "german": "Auto",
+    "wrong_answers": [
+      "bike",
+      "bus",
+      "train"
+    ]
+  },
+  {
+    "id": 6,
+    "english": "cat",
+    "german": "Katze",
+    "wrong_answers": [
+      "dog",
+      "mouse",
+      "horse"
+    ]
+  },
+  {
+    "id": 7,
+    "english": "book",
+    "german": "Buch",
+    "wrong_answers": [
+      "pen",
+      "paper",
+      "desk"
+    ]
+  },
+  {
+    "id": 8,
+    "english": "water",
+    "german": "Wasser",
+    "wrong_answers": [
+      "fire",
+      "air",
+      "earth"
+    ]
+  },
+  {
+    "id": 9,
+    "english": "bird",
+    "german": "Vogel",
+    "wrong_answers": [
+      "snake",
+      "fish",
+      "lion"
+    ]
+  },
+  {
+    "id": 10,
+    "english": "moon",
+    "german": "Mond",
+    "wrong_answers": [
+      "sun",
+      "star",
+      "cloud"
+    ]
+  },
+  {
+    "id": 11,
+    "english": "table",
+    "german": "Tisch",
+    "wrong_answers": [
+      "chair",
+      "bed",
+      "lamp"
+    ]
+  },
+  {
+    "id": 12,
+    "english": "chair",
+    "german": "Stuhl",
+    "wrong_answers": [
+      "table",
+      "sofa",
+      "desk"
+    ]
+  },
+  {
+    "id": 13,
+    "english": "flower",
+    "german": "Blume",
+    "wrong_answers": [
+      "tree",
+      "grass",
+      "bush"
+    ]
+  },
+  {
+    "id": 14,
+    "english": "sky",
+    "german": "Himmel",
+    "wrong_answers": [
+      "sea",
+      "ground",
+      "mountain"
+    ]
+  },
+  {
+    "id": 15,
+    "english": "fish",
+    "german": "Fisch",
+    "wrong_answers": [
+      "bird",
+      "snake",
+      "dog"
+    ]
+  },
+  {
+    "id": 16,
+    "english": "door",
+    "german": "Tür",
+    "wrong_answers": [
+      "window",
+      "wall",
+      "floor"
+    ]
+  },
+  {
+    "id": 17,
+    "english": "window",
+    "german": "Fenster",
+    "wrong_answers": [
+      "door",
+      "roof",
+      "wall"
+    ]
+  },
+  {
+    "id": 18,
+    "english": "school",
+    "german": "Schule",
+    "wrong_answers": [
+      "hospital",
+      "shop",
+      "park"
+    ]
+  },
+  {
+    "id": 19,
+    "english": "pen",
+    "german": "Stift",
+    "wrong_answers": [
+      "book",
+      "paper",
+      "eraser"
+    ]
+  },
+  {
+    "id": 20,
+    "english": "apple",
+    "german": "Apfel",
+    "wrong_answers": [
+      "banana",
+      "orange",
+      "pear"
+    ]
+  },
+  {
+    "id": 21,
+    "english": "banana",
+    "german": "Banane",
+    "wrong_answers": [
+      "apple",
+      "grape",
+      "peach"
+    ]
+  },
+  {
+    "id": 22,
+    "english": "river",
+    "german": "Fluss",
+    "wrong_answers": [
+      "lake",
+      "sea",
+      "stream"
+    ]
+  },
+  {
+    "id": 23,
+    "english": "mountain",
+    "german": "Berg",
+    "wrong_answers": [
+      "valley",
+      "hill",
+      "plain"
+    ]
+  },
+  {
+    "id": 24,
+    "english": "star",
+    "german": "Stern",
+    "wrong_answers": [
+      "moon",
+      "sun",
+      "cloud"
+    ]
+  },
+  {
+    "id": 25,
+    "english": "cloud",
+    "german": "Wolke",
+    "wrong_answers": [
+      "sky",
+      "star",
+      "rain"
+    ]
+  },
+  {
+    "id": 26,
+    "english": "horse",
+    "german": "Pferd",
+    "wrong_answers": [
+      "cow",
+      "sheep",
+      "goat"
+    ]
+  },
+  {
+    "id": 27,
+    "english": "street",
+    "german": "Straße",
+    "wrong_answers": [
+      "path",
+      "road",
+      "bridge"
+    ]
+  },
+  {
+    "id": 28,
+    "english": "bus",
+    "german": "Bus",
+    "wrong_answers": [
+      "car",
+      "train",
+      "bike"
+    ]
+  },
+  {
+    "id": 29,
+    "english": "train",
+    "german": "Zug",
+    "wrong_answers": [
+      "bus",
+      "car",
+      "plane"
+    ]
+  },
+  {
+    "id": 30,
+    "english": "plane",
+    "german": "Flugzeug",
+    "wrong_answers": [
+      "train",
+      "ship",
+      "car"
+    ]
+  },
+  {
+    "id": 31,
+    "english": "sea",
+    "german": "Meer",
+    "wrong_answers": [
+      "river",
+      "lake",
+      "ocean"
+    ]
+  },
+  {
+    "id": 32,
+    "english": "fire",
+    "german": "Feuer",
+    "wrong_answers": [
+      "water",
+      "air",
+      "earth"
+    ]
+  },
+  {
+    "id": 33,
+    "english": "wind",
+    "german": "Wind",
+    "wrong_answers": [
+      "rain",
+      "snow",
+      "fog"
+    ]
+  },
+  {
+    "id": 34,
+    "english": "rain",
+    "german": "Regen",
+    "wrong_answers": [
+      "snow",
+      "wind",
+      "sun"
+    ]
+  },
+  {
+    "id": 35,
+    "english": "snow",
+    "german": "Schnee",
+    "wrong_answers": [
+      "rain",
+      "ice",
+      "fog"
+    ]
+  },
+  {
+    "id": 36,
+    "english": "day",
+    "german": "Tag",
+    "wrong_answers": [
+      "night",
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "id": 37,
+    "english": "night",
+    "german": "Nacht",
+    "wrong_answers": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "id": 38,
+    "english": "friend",
+    "german": "Freund",
+    "wrong_answers": [
+      "enemy",
+      "stranger",
+      "neighbor"
+    ]
+  },
+  {
+    "id": 39,
+    "english": "family",
+    "german": "Familie",
+    "wrong_answers": [
+      "friend",
+      "team",
+      "group"
+    ]
+  },
+  {
+    "id": 40,
+    "english": "mother",
+    "german": "Mutter",
+    "wrong_answers": [
+      "father",
+      "sister",
+      "brother"
+    ]
+  },
+  {
+    "id": 41,
+    "english": "father",
+    "german": "Vater",
+    "wrong_answers": [
+      "mother",
+      "son",
+      "daughter"
+    ]
+  },
+  {
+    "id": 42,
+    "english": "sister",
+    "german": "Schwester",
+    "wrong_answers": [
+      "brother",
+      "mother",
+      "father"
+    ]
+  },
+  {
+    "id": 43,
+    "english": "brother",
+    "german": "Bruder",
+    "wrong_answers": [
+      "sister",
+      "father",
+      "mother"
+    ]
+  },
+  {
+    "id": 44,
+    "english": "food",
+    "german": "Essen",
+    "wrong_answers": [
+      "drink",
+      "plate",
+      "kitchen"
+    ]
+  },
+  {
+    "id": 45,
+    "english": "bread",
+    "german": "Brot",
+    "wrong_answers": [
+      "cheese",
+      "meat",
+      "soup"
+    ]
+  },
+  {
+    "id": 46,
+    "english": "milk",
+    "german": "Milch",
+    "wrong_answers": [
+      "water",
+      "juice",
+      "tea"
+    ]
+  },
+  {
+    "id": 47,
+    "english": "coffee",
+    "german": "Kaffee",
+    "wrong_answers": [
+      "tea",
+      "milk",
+      "water"
+    ]
+  },
+  {
+    "id": 48,
+    "english": "tea",
+    "german": "Tee",
+    "wrong_answers": [
+      "coffee",
+      "juice",
+      "milk"
+    ]
+  },
+  {
+    "id": 49,
+    "english": "hand",
+    "german": "Hand",
+    "wrong_answers": [
+      "foot",
+      "arm",
+      "leg"
+    ]
+  },
+  {
+    "id": 50,
+    "english": "foot",
+    "german": "Fuß",
+    "wrong_answers": [
+      "hand",
+      "leg",
+      "arm"
+    ]
+  },
+  {
+    "id": 51,
+    "english": "head",
+    "german": "Kopf",
+    "wrong_answers": [
+      "face",
+      "neck",
+      "shoulder"
+    ]
+  },
+  {
+    "id": 52,
+    "english": "eye",
+    "german": "Auge",
+    "wrong_answers": [
+      "ear",
+      "nose",
+      "mouth"
+    ]
+  },
+  {
+    "id": 53,
+    "english": "ear",
+    "german": "Ohr",
+    "wrong_answers": [
+      "eye",
+      "nose",
+      "mouth"
+    ]
+  },
+  {
+    "id": 54,
+    "english": "nose",
+    "german": "Nase",
+    "wrong_answers": [
+      "eye",
+      "ear",
+      "mouth"
+    ]
+  },
+  {
+    "id": 55,
+    "english": "mouth",
+    "german": "Mund",
+    "wrong_answers": [
+      "eye",
+      "ear",
+      "nose"
+    ]
+  },
+  {
+    "id": 56,
+    "english": "heart",
+    "german": "Herz",
+    "wrong_answers": [
+      "lung",
+      "brain",
+      "stomach"
+    ]
+  },
+  {
+    "id": 57,
+    "english": "time",
+    "german": "Zeit",
+    "wrong_answers": [
+      "clock",
+      "hour",
+      "minute"
+    ]
+  },
+  {
+    "id": 58,
+    "english": "hour",
+    "german": "Stunde",
+    "wrong_answers": [
+      "minute",
+      "second",
+      "day"
+    ]
+  },
+  {
+    "id": 59,
+    "english": "minute",
+    "german": "Minute",
+    "wrong_answers": [
+      "hour",
+      "second",
+      "day"
+    ]
+  },
+  {
+    "id": 60,
+    "english": "second",
+    "german": "Sekunde",
+    "wrong_answers": [
+      "minute",
+      "hour",
+      "day"
+    ]
+  },
+  {
+    "id": 61,
+    "english": "color",
+    "german": "Farbe",
+    "wrong_answers": [
+      "shape",
+      "size",
+      "pattern"
+    ]
+  },
+  {
+    "id": 62,
+    "english": "red",
+    "german": "Rot",
+    "wrong_answers": [
+      "blue",
+      "green",
+      "yellow"
+    ]
+  },
+  {
+    "id": 63,
+    "english": "blue",
+    "german": "Blau",
+    "wrong_answers": [
+      "red",
+      "green",
+      "yellow"
+    ]
+  },
+  {
+    "id": 64,
+    "english": "green",
+    "german": "Grün",
+    "wrong_answers": [
+      "red",
+      "blue",
+      "yellow"
+    ]
+  },
+  {
+    "id": 65,
+    "english": "yellow",
+    "german": "Gelb",
+    "wrong_answers": [
+      "red",
+      "blue",
+      "green"
+    ]
+  },
+  {
+    "id": 66,
+    "english": "black",
+    "german": "Schwarz",
+    "wrong_answers": [
+      "white",
+      "gray",
+      "brown"
+    ]
+  },
+  {
+    "id": 67,
+    "english": "white",
+    "german": "Weiß",
+    "wrong_answers": [
+      "black",
+      "gray",
+      "brown"
+    ]
+  },
+  {
+    "id": 68,
+    "english": "city",
+    "german": "Stadt",
+    "wrong_answers": [
+      "village",
+      "town",
+      "country"
+    ]
+  },
+  {
+    "id": 69,
+    "english": "village",
+    "german": "Dorf",
+    "wrong_answers": [
+      "city",
+      "town",
+      "country"
+    ]
+  },
+  {
+    "id": 70,
+    "english": "country",
+    "german": "Land",
+    "wrong_answers": [
+      "city",
+      "village",
+      "town"
+    ]
+  },
+  {
+    "id": 71,
+    "english": "love",
+    "german": "Liebe",
+    "wrong_answers": [
+      "hate",
+      "fear",
+      "anger"
+    ]
+  },
+  {
+    "id": 72,
+    "english": "work",
+    "german": "Arbeit",
+    "wrong_answers": [
+      "rest",
+      "play",
+      "sleep"
+    ]
+  },
+  {
+    "id": 73,
+    "english": "home",
+    "german": "Zuhause",
+    "wrong_answers": [
+      "school",
+      "office",
+      "park"
+    ]
+  },
+  {
+    "id": 74,
+    "english": "garden",
+    "german": "Garten",
+    "wrong_answers": [
+      "forest",
+      "field",
+      "park"
+    ]
+  },
+  {
+    "id": 75,
+    "english": "forest",
+    "german": "Wald",
+    "wrong_answers": [
+      "garden",
+      "field",
+      "park"
+    ]
+  },
+  {
+    "id": 76,
+    "english": "road",
+    "german": "Weg",
+    "wrong_answers": [
+      "street",
+      "path",
+      "bridge"
+    ]
+  },
+  {
+    "id": 77,
+    "english": "bridge",
+    "german": "Brücke",
+    "wrong_answers": [
+      "road",
+      "tunnel",
+      "path"
+    ]
+  },
+  {
+    "id": 78,
+    "english": "light",
+    "german": "Licht",
+    "wrong_answers": [
+      "dark",
+      "shadow",
+      "glow"
+    ]
+  },
+  {
+    "id": 79,
+    "english": "dark",
+    "german": "Dunkel",
+    "wrong_answers": [
+      "light",
+      "bright",
+      "glow"
+    ]
+  },
+  {
+    "id": 80,
+    "english": "game",
+    "german": "Spiel",
+    "wrong_answers": [
+      "work",
+      "task",
+      "job"
+    ]
+  },
+  {
+    "id": 81,
+    "english": "song",
+    "german": "Lied",
+    "wrong_answers": [
+      "story",
+      "poem",
+      "book"
+    ]
+  },
+  {
+    "id": 82,
+    "english": "picture",
+    "german": "Bild",
+    "wrong_answers": [
+      "photo",
+      "drawing",
+      "painting"
+    ]
+  },
+  {
+    "id": 83,
+    "english": "paper",
+    "german": "Papier",
+    "wrong_answers": [
+      "pen",
+      "book",
+      "desk"
+    ]
+  },
+  {
+    "id": 84,
+    "english": "money",
+    "german": "Geld",
+    "wrong_answers": [
+      "coin",
+      "bill",
+      "wallet"
+    ]
+  },
+  {
+    "id": 85,
+    "english": "shop",
+    "german": "Geschäft",
+    "wrong_answers": [
+      "market",
+      "store",
+      "mall"
+    ]
+  },
+  {
+    "id": 86,
+    "english": "market",
+    "german": "Markt",
+    "wrong_answers": [
+      "shop",
+      "store",
+      "mall"
+    ]
+  },
+  {
+    "id": 87,
+    "english": "park",
+    "german": "Park",
+    "wrong_answers": [
+      "garden",
+      "forest",
+      "field"
+    ]
+  },
+  {
+    "id": 88,
+    "english": "beach",
+    "german": "Strand",
+    "wrong_answers": [
+      "sea",
+      "lake",
+      "river"
+    ]
+  },
+  {
+    "id": 89,
+    "english": "lake",
+    "german": "See",
+    "wrong_answers": [
+      "river",
+      "sea",
+      "ocean"
+    ]
+  },
+  {
+    "id": 90,
+    "english": "stone",
+    "german": "Stein",
+    "wrong_answers": [
+      "rock",
+      "sand",
+      "dirt"
+    ]
+  },
+  {
+    "id": 91,
+    "english": "grass",
+    "german": "Gras",
+    "wrong_answers": [
+      "flower",
+      "tree",
+      "bush"
+    ]
+  },
+  {
+    "id": 92,
+    "english": "hill",
+    "german": "Hügel",
+    "wrong_answers": [
+      "mountain",
+      "valley",
+      "plain"
+    ]
+  },
+  {
+    "id": 93,
+    "english": "valley",
+    "german": "Tal",
+    "wrong_answers": [
+      "hill",
+      "mountain",
+      "plain"
+    ]
+  },
+  {
+    "id": 94,
+    "english": "ice",
+    "german": "Eis",
+    "wrong_answers": [
+      "snow",
+      "water",
+      "fire"
+    ]
+  },
+  {
+    "id": 95,
+    "english": "dream",
+    "german": "Traum",
+    "wrong_answers": [
+      "wish",
+      "hope",
+      "thought"
+    ]
+  },
+  {
+    "id": 96,
+    "english": "key",
+    "german": "Schlüssel",
+    "wrong_answers": [
+      "lock",
+      "door",
+      "gate"
+    ]
+  },
+  {
+    "id": 97,
+    "english": "lock",
+    "german": "Schloss",
+    "wrong_answers": [
+      "key",
+      "door",
+      "gate"
+    ]
+  },
+  {
+    "id": 98,
+    "english": "map",
+    "german": "Karte",
+    "wrong_answers": [
+      "book",
+      "guide",
+      "plan"
+    ]
+  },
+  {
+    "id": 99,
+    "english": "world",
+    "german": "Welt",
+    "wrong_answers": [
+      "earth",
+      "planet",
+      "country"
+    ]
+  },
+  {
+    "id": 100,
+    "english": "life",
+    "german": "Leben",
+    "wrong_answers": [
+      "death",
+      "time",
+      "world"
+    ]
+  }
+]
