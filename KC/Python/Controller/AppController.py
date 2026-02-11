@@ -19,7 +19,7 @@ class AppController:
         self.wrong_in_session = 0
         self.current_item = None
 
-        self.container = ttk.Frame(root)#
+        self.container = ttk.Frame(root)
         self.container.pack(fill="both", expand=True)
 
         self.start_view = StartView(self.container, self)
